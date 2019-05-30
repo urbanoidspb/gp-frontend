@@ -8,13 +8,13 @@
 
     <section class="events">
         <h2 class="title">{{Event.title}}</h2>
-        <h3 class="status" v-if="Event.status">Акция завершена</h3>
+        <h3 class="status" v-if="!Event.is_relevant">Акция завершена</h3>
         <article>
             <img :src="Event.photos[1]" alt="">
             <p>
                 {{Event.description}}
             </p>
-            <button>Участвовать</button>
+            <Modal id="Modal" v-bind:event-id="Event.id" v-bind:event-status="Event.is_relevant"/>
         </article>
         <section class="another_events">
             <header>
@@ -52,12 +52,14 @@
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
 import Event from '~/components/Event.vue'
+import Modal from '~/components/Modal.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
   components: {
     Contacts,
     Navbar,
+    Modal,
     Event,
     Footer
   },
@@ -121,13 +123,12 @@ html {
     margin: 2vw 0;
 }
 
-article button {
+article #Modal {
     grid-column: 3/5;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
-    padding: 0.7rem 0;
     background: #C4C4C4;
     font-family: 'Rubik', sans-serif;
     border: none;
@@ -136,6 +137,7 @@ article button {
     color: white;
     font-weight: 500;
     margin: 3vw 0;
+    outline: none;
 }
 
 .another_events header h3 {

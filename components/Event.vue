@@ -8,9 +8,9 @@
             <router-link :to="{ path: '/events/' + eventId }"></router-link>
         </div>
         <section class="info">
-            <router-link :to="{ path: '/events/' + eventId }" class="event_name">{{eventTitle.slice(0,40) + ellipsis}}</router-link>
+            <router-link :to="{ path: '/events/' + eventId }" class="event_name">{{title}}</router-link>
             <p class="date">{{eventTime}}</p>
-            <Modal class="сomeIn" v-bind:event-id="eventId"/>
+            <Modal class="сomeIn" v-bind:event-id="eventId" v-bind:event-status="eventStatus"/>
         </section>
     </section>
 </template>
@@ -31,6 +31,9 @@ export default {
         eventPhoto: String
     },
     computed: {
+        title() {
+            return this.eventTitle.slice(0,40) + this.ellipsis
+        },
         backgroundImage() {
                 var style = 'url("' + this.eventPhoto + ") 50% 50% no-repeat;"
                 return style;
@@ -116,6 +119,7 @@ export default {
     }
     
     .event_name {
+        width: 100%;
         text-align: center;
         font-size: 1.5rem;
         font-weight: 500;
@@ -130,6 +134,7 @@ export default {
     .сomeIn {
         width: 100%;
         height: 30%;
+        padding: 0;
         border: none;
         font-size: 1.5rem;
         background: #5EB8D3;

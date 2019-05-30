@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button class="сomeIn" @click="showModal = true">Участвовать</button>
+    <button class="сomeIn" @click="showModal = true" :style="сomeInStyle" :disabled="!eventStatus">Участвовать</button>
         <transition name="modal">
             <div v-if="showModal" class="modal-mask">
                 <div class="modal-wrapper">
@@ -54,8 +54,17 @@ export default {
     }
   },
   props: {
-        eventId: Number
+        eventId: Number,
+        eventStatus: Boolean
     },
+  computed: {
+    сomeInStyle() { 
+      console.log(this.eventStatus, this.eventId)
+            return {
+                background: this.eventStatus ? "#5EB8D3" : "#C4C4C4"
+            }
+        },
+  },
   methods: {
     ...mapActions({
       submitParticipant : 'submitParticipant',
@@ -71,11 +80,11 @@ export default {
 <style scoped>
 
 .сomeIn {
+        padding: 0.7rem 0;
         width: 100%;
         height: 100%;
         border: none;
         font-size: 1.5rem;
-        background: #5EB8D3;
         border-radius: 30px;
         font-family: 'Rubik', sans-serif;
         outline: none;
@@ -139,7 +148,7 @@ form {
 }
 
 label {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 input[type=text],
@@ -147,9 +156,9 @@ input[type=email],
 input[type=tel] {
     font-family: 'Rubik', sans-serif;
     border: 1px solid #C4C4C4;
-    margin: 0.5rem 0 1rem;
-    padding: 0.5rem;
-    font-size: 1.2rem;
+    margin: 0.4rem 0 1rem;
+    padding: 0.4rem;
+    font-size: 1.1rem;
     border-radius: 8px;
     outline: none;
 }

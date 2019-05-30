@@ -35,15 +35,15 @@ const creatStore = () => {
         },
         actions: {
             async actSetEvents(context) {
-                const req = await axios.get('http://6ae7a55b.ngrok.io/api/events')
+                const req = await axios.get('http://b6719941.ngrok.io/api/events')
                 context.commit('setEvents', req.data);
             },
             async actSetNews(context) {
-                const req = await axios.get('http://6ae7a55b.ngrok.io/api/news ')
+                const req = await axios.get('http://b6719941.ngrok.io/api/news ')
                 context.commit('setNews', req.data);
             },
             async actSetGalleries(context) {
-                const req = await axios.get('http://6ae7a55b.ngrok.io/api/albums')
+                const req = await axios.get('http://b6719941.ngrok.io/api/albums')
                 context.commit('setGalleries', req.data);
             },
             submitParticipant (context, { eventId, participant }) {
@@ -51,7 +51,7 @@ const creatStore = () => {
               console.log(Event.participants);
               context.commit('addParticipantToEvent', { Event, participant});
               axios
-                .post('http://6ae7a55b.ngrok.io/api/events/1/join', participant)
+                .post('http://b6719941.ngrok.io/api/events/1/join', participant)
             }
         }
 
