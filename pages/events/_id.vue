@@ -78,7 +78,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-    // await store.dispatch('actSetEvents');
+    await store.dispatch('actSetEvents');
       return {
         events: store.getters.getEvents
     }

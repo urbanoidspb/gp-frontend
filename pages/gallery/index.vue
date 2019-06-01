@@ -59,7 +59,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-      // await store.dispatch('actSetGalleries');
+      await store.dispatch('actSetGalleries');
       return {
         galleries: store.getters.getGalleries
     }

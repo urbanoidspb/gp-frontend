@@ -71,7 +71,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-    // await store.dispatch('actSetNews');
+    await store.dispatch('actSetNews');
       return {
         news: store.getters.getNews
     }

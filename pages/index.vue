@@ -85,8 +85,8 @@ export default {
     Footer
   },
   async asyncData ({store}) {
-      // await store.dispatch('actSetEvents');
-      // await store.dispatch('actSetNews');
+      await store.dispatch('actSetEvents');
+      await store.dispatch('actSetNews');
       return {
         events: store.getters.getEvents,
         news: store.getters.getNews

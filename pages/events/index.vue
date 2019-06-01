@@ -31,7 +31,7 @@
         accurateTrackBounce:true
    });
 </script>
-
+<noscript><div><img src="https://mc.yandex.ru/watch/53837686" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
   </div>
@@ -58,7 +58,7 @@ export default {
   },
 
   async asyncData ({store}) {
-    // await store.dispatch('actSetEvents');
+    await store.dispatch('actSetEvents');
       return {
         events: store.getters.getEvents
     }
@@ -234,9 +234,6 @@ html {
     grid-gap: 4vw;
     margin: 10vw 0;
   }  
-  .events .showall {
-
-  }
 }
 
 @media (max-width: 360px) {
