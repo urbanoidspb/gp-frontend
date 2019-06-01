@@ -5,28 +5,29 @@
       <Navbar id="Navbar"/>
     </no-ssr>
     <section class="joinUs">
+      <img src="~/assets/main_background.png" alt="">
       <h2>Проектная площадка</h2>
       <h1>"Петербург - город перемен"</h1>
       <button class="SignInButton">Присоединиться</button>
       <p>*Форма заполняемая личными данными</p>
     </section>
 
-    <section class="steps">
-      <div class="step">
+    <section class="home_steps">
+      <div class="home_step">
         <img src="~/assets/step1.png" alt="">
         <h3>Подай заявку</h3>
       </div>
-      <div class="step">
+      <div class="home_step">
         <img src="~/assets/step2.png" alt="">
         <h3>Защити проект</h3>
       </div>
-      <div class="step">
+      <div class="home_step">
         <img src="~/assets/step3.png" alt="">
         <h3>Получи поддержку</h3>
       </div>
     </section>
 
-    <section class="events">
+    <section class="home_events">
         <header>
           <h2>Мероприятия</h2>
           <router-link to="/events">Все мероприятия</router-link>
@@ -36,7 +37,7 @@
         </main>
     </section>
 
-    <section class="news">
+    <section class="home_news">
         <header>
           <h2>Новости</h2>
           <router-link to="/news">Все новости</router-link>
@@ -84,8 +85,8 @@ export default {
     Footer
   },
   async asyncData ({store}) {
-      await store.dispatch('actSetEvents');
-      await store.dispatch('actSetNews');
+      // await store.dispatch('actSetEvents');
+      // await store.dispatch('actSetNews');
       return {
         events: store.getters.getEvents,
         news: store.getters.getNews
@@ -114,15 +115,17 @@ html {
   align-items: center;
   justify-content: flex-end;
   width: 100%;
-  height: 65vw;
   font-size: 2rem;
   color: #1B1B1B;
-  background: url('../assets/main_background.png') 50% 50% no-repeat;
-  background-size: contain;
+}
+
+.joinUs > img {
+  width: 100%;
+  margin: -3rem 0;
 }
 
 .joinUs h1 {
-  margin: 2rem 0 3rem;
+  margin: 0 0 3rem;
 }
 
 .joinUs h2 {
@@ -152,45 +155,45 @@ html {
   color: #515050;
 }
 
-.steps {
+.home_steps {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1vw;
   margin: 5vw 0;
 }
 
-.step {
+.home_step {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.step img {
+.home_step img {
   width: 70%;
 }
 
-.step h3 {
+.home_step h3 {
   font-size: 2rem;
   padding: 2rem 0;
   font-weight: normal;
   text-align: center;
 }
 
-.events header,
-.news header {
+.home_events header,
+.home_news header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.events header h2,
-.news header h2 {
+.home_events header h2,
+.home_news header h2 {
   font-size: 2.7rem;
   font-weight: 500;
 }
 
-.events header a,
-.news header a {
+.home_events header a,
+.home_news header a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,8 +208,8 @@ html {
   font-weight: 500;
 }
 
-.events main,
-.news main {
+.home_events main,
+.home_news main {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2vw;
@@ -225,15 +228,52 @@ html {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1880px) {
+  html {
+  font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1880px) {
+  html {
+  font-size: 23px;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+  font-size: 22px;
+  }
+}
+
+@media (max-width: 1740px) {
+  html {
+  font-size: 21px;
+  }
+}
+
+@media (max-width: 1640px) {
   html {
   font-size: 20px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1540px) {
   html {
-  font-size: 28px;
+  font-size: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+  font-size: 18px;
+  }
+}
+
+@media (max-width: 1340px) {
+  html {
+  font-size: 16px;
   }
 }
 
@@ -241,8 +281,11 @@ html {
   html {
   font-size: 14px;
   }
-  .joinUs {
-  height: 65vw;
+}
+
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
   }
 }
 
@@ -250,57 +293,75 @@ html {
   html {
   font-size: 12px;
   }
-  .joinUs {
-  height: 70vw;
+}
+
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
-  .joinUs {
-  height: 70vw;
+  .joinUs > img {
+  margin: -1.7rem 0;
+  }
+}
+
+
+@media (max-width: 700px) {
+  html {
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+  font-size: 8px;
   }
 }
 
 @media (max-width: 576px) {
   html {
-  font-size: 8px;
+  font-size: 7px;
   }
-  .events main,
-  .news main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2vw;
-  }  
+  .joinUs > img {
+  margin: -1.5rem 0;
+  }
 }
 
 @media (max-width: 420px) {
   html {
-  font-size: 7px;
+  font-size: 6px;
   }
+  .home_events main,
+  .home_news main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2vw;
+  }  
   #Navbar {
     padding-bottom: 8rem;
   }
-  .events main,
-  .news main {
+  .home_events main,
+  .home_news main {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 4vw;
-    margin: 10vw 0;
+    grid-gap: 3vw;
+    margin: 5vw 0;
   }  
   .steps {
     margin: 10vw 0;
+  }
+  .joinUs > img {
+  margin: -1rem 0;
   }
 }
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
-  }
-  .joinUs {
-  height: 80vw;
+  font-size: 5px;
   }
 }
 

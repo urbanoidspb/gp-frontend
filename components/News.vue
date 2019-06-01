@@ -1,7 +1,7 @@
 <template>
-    <section class="news" :style="{backgroundImage}">
-        <h2>{{NewsItemTitle}}</h2>
-        <span class="data">{{NewsItemDate}}</span>
+    <section class="news" :style="{background: backgroundImage}">
+        <h2>{{title}}</h2>
+        <span class="news_data">{{NewsItemDate}}</span>
         <router-link :to="{ path: '/news/' + NewsItemId }"></router-link>
     </section>
 </template>
@@ -17,13 +17,22 @@ export default {
         NewsItemId: Number,
         NewsItemTitle: String,
         NewsItemDate: String,
-        NewsItemPhoto: String
+        NewsItemPhoto: Object
     },
     computed: {
         backgroundImage() {
-                    var style = 'url("' + this.NewsItemPhoto + ") 50% 50% no-repeat;"
+            if (this.NewsItemPhoto !== undefined) {
+                    var style = 'url("' + this.NewsItemPhoto.path + ") 50% 50% no-repeat;"
                     return style;
-            },
+            }
+        }, 
+        title() {
+            return this.NewsItemTitle.slice(0,27) + this.ellipsis
+        },   
+        ellipsis() {
+            var el;
+           return (this.NewsItemTitle.length > 27) ? el = "..." : el = '';
+        }
     }
 }
 </script>
@@ -36,18 +45,17 @@ export default {
         padding: 0;
         width: 100%;
         height: 18vw;
-        border: 1px solid #71D5A2;
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
         color: white;
         box-shadow: inset -12px -181px 95px -72px rgba(0,0,0,0.75);
-        background-size: cover;
+        background-size: cover  !important;
         padding: 1rem 1rem;
         position: relative;
     }
 
     h2 {
-        text-decoration: underline;
+        text-decoration: underline; 
         font-weight: 500;
         font-size: 1.5rem;
         margin-bottom: 1rem;
@@ -62,17 +70,21 @@ export default {
         bottom: 0;
     }
 
+    .news_data {
+        font-size: 0.8rem;
+    }
+
     @media (max-width: 420px) {
         .news {
-            height: 40vw;
-            padding: 3rem 2rem;
+            height: 30vw;
+            padding: 1rem 2rem;
         }
         h2 {
-            font-size: 3rem;
-            margin-bottom: 2rem;
-        }
-        span {
             font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .news_data {
+            font-size: 1.1rem;
         }
     }
 </style>

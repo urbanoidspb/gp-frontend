@@ -10,11 +10,11 @@
         <main>
             <div class="main_item"  v-for="gallery in galleries.slice(0, this.galleriesOnPage)" v-bind:key="gallery.id" >
                 <Gallery v-bind:gallery-id="gallery.id" v-bind:gallery-photos="gallery.photos" v-bind:gallery-time="gallery.time"/>
-                <h2 class="name">{{gallery.title}}</h2>
+                <h2 class="name">{{funcTitle(gallery.title)}}</h2>
             </div>
         </main>
         <div class="showallRow">
-            <button v-on:click="galeriesOnPage += 6" class="showall" to="/about">Показать ещё</button>
+            <button v-on:click="galleriesOnPage += 6" class="showall" to="/about">Показать ещё</button>
         </div>
     </section>
 
@@ -59,11 +59,21 @@ export default {
     }
   },
   async asyncData ({store}) {
-      await store.dispatch('actSetGalleries');
+      // await store.dispatch('actSetGalleries');
       return {
         galleries: store.getters.getGalleries
     }
-  }
+  },
+
+  methods: {
+    ellipsis(title) {
+        var el;
+        return (title.length > 40) ? el = "..." : el = '';
+    },
+    funcTitle(title) {
+            return title.toString().slice(0,40) + this.ellipsis(title.toString())
+        },
+  },
 }
 </script>
 
@@ -117,6 +127,7 @@ html {
     color: #023C71;
     font-weight: 500;
     outline: none;
+    cursor: pointer;
 }
 
 .background {
@@ -131,15 +142,52 @@ html {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1880px) {
+  html {
+  font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1880px) {
+  html {
+  font-size: 23px;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+  font-size: 22px;
+  }
+}
+
+@media (max-width: 1740px) {
+  html {
+  font-size: 21px;
+  }
+}
+
+@media (max-width: 1640px) {
   html {
   font-size: 20px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1540px) {
   html {
-  font-size: 28px;
+  font-size: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+  font-size: 18px;
+  }
+}
+
+@media (max-width: 1340px) {
+  html {
+  font-size: 16px;
   }
 }
 
@@ -149,48 +197,69 @@ html {
   }
 }
 
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
+  }
+}
+
 @media (max-width: 992px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
+  }
+}
+
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
 }
 
+@media (max-width: 700px) {
+  html {
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+  font-size: 8px;
+  }
+}
+
 @media (max-width: 576px) {
   html {
-    font-size: 8px;
+    font-size: 7px;
   }
-  .gallery main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2vw;
-  }  
+  #Navbar {
+    margin-bottom: 2vw;
+  }
 }
 
 @media (max-width: 420px) {
   html {
-    font-size: 7px;
+  font-size: 6px;
   }
   .gallery main {
-    display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 4vw;
     margin: 10vw 0;
   }  
   .main_item > h2 {
-    margin-top: 1rem;
-    font-size: 2.5rem;   
+    margin-top: 0.5rem;
+    font-size: 2rem;   
   }
 }
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
+  font-size: 5px;
   }
 }
 

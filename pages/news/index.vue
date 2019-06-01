@@ -58,7 +58,7 @@ export default {
   },
 
   async asyncData ({store}) {
-      await store.dispatch('actSetNews');
+      // await store.dispatch('actSetNews');
       return {
         news: store.getters.getNews
     }
@@ -109,6 +109,7 @@ html {
     color: #023C71;
     font-weight: 500;
     outline: none;
+    cursor: pointer;
 }
 
 .background {
@@ -123,15 +124,52 @@ html {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1880px) {
+  html {
+  font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1880px) {
+  html {
+  font-size: 23px;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+  font-size: 22px;
+  }
+}
+
+@media (max-width: 1740px) {
+  html {
+  font-size: 21px;
+  }
+}
+
+@media (max-width: 1640px) {
   html {
   font-size: 20px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1540px) {
   html {
-  font-size: 28px;
+  font-size: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+  font-size: 18px;
+  }
+}
+
+@media (max-width: 1340px) {
+  html {
+  font-size: 16px;
   }
 }
 
@@ -141,44 +179,65 @@ html {
   }
 }
 
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
+  }
+}
+
 @media (max-width: 992px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
+  }
+}
+
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
+  html {
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
   html {
   font-size: 8px;
   }
-  .news main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2vw;
-  }  
+}
+
+@media (max-width: 576px) {
+  html {
+  font-size: 7px;
+  }
+  #Navbar {
+    margin-bottom: 2vw;
+  } 
 }
 
 @media (max-width: 420px) {
   html {
-  font-size: 7px;
+  font-size: 6px;
   }
   .news main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 4vw;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4vw 2vw;
     margin: 10vw 0;
   }  
 }
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
+  font-size: 5px;
   }
 }
 

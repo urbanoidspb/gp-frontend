@@ -118,7 +118,7 @@ html {
     font-weight: 500;
 }
 
-.p1 {
+.wrapper .p1 {
     grid-column: 4/12;
     text-align: center;
     font-size: 1.4rem;
@@ -128,7 +128,7 @@ p > span {
     font-weight: 500;
 }
 
-.date {
+.wrapper .date {
     width: 100%;
     margin: 4rem 0;
     grid-column: 4/12;
@@ -137,7 +137,7 @@ p > span {
     grid-gap: 2vw;
 }
 
-.date .day {
+.wrapper .date .day {
     grid-column: 1/2;
     display: flex;
     flex-direction: column;
@@ -152,7 +152,7 @@ p > span {
     color: #0C6293;
 }
 
-.date p {
+.wrapper .date p {
     font-size: 1.4rem;
     grid-column: 2/9;
     line-height: 2rem
@@ -213,7 +213,7 @@ section.aims main {
     text-align: center;
 }
 
-.toInfo {
+.wrapper .toInfo {
     grid-column: 6/10;
     margin: 4rem 0;
     display: flex;
@@ -237,7 +237,7 @@ section.aims main {
     font-weight: 500;
 }
 
-.enter {
+.wrapper .enter {
   grid-column: 6/10;
   display: flex;
   justify-content: center;
@@ -268,13 +268,13 @@ section.aims main {
 
 @media (min-width: 1440px) {
   html {
-  font-size: 20px;
+  font-size: 18px;
   }
 }
 
 @media (min-width: 1920px) {
   html {
-  font-size: 28px;
+  font-size: 25px;
   }
 }
 
@@ -284,16 +284,33 @@ section.aims main {
   }
 }
 
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
+  }
+}
+
 @media (max-width: 992px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
+  }
+}
+
+
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
+}
+
+@media (max-width: 780px) {
+
   .date {
     grid-gap: 4vw;
   }
@@ -304,15 +321,36 @@ section.aims main {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
+  html {
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
   html {
   font-size: 8px;
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 576px) {
   html {
   font-size: 7px;
+  }
+  #Navbar {
+    margin-bottom: 2vw;
+  }
+  .wrapper .enter {
+    grid-column: 5/11;
+  }
+  .wrapper .toInfo {
+    grid-column: 5/11;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+  font-size: 6px;
   }
   .title {
       margin: 6rem 0 3rem;
@@ -351,7 +389,7 @@ section.aims main {
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
+  font-size: 5px;
   }
 }
 

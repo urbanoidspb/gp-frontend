@@ -8,10 +8,10 @@
     <section class="gallery">
         <h2 class="title">Санкт-Петербург</h2>
         <main>
-            <img v-for="photo in Gallery.photos" v-bind:key="photo" :src="Gallery.photo" alt="">
+            <img v-for="photo in Gallery.photos.slice(0, this.NewsOnPage)" v-bind:key="photo" :src="photoSrc(photo)" alt="">
         </main>
         <div class="showallRow">
-            <button class="showall" to="/about">Показать ещё</button>
+            <button v-on:click="PhotosOnPage += 6" class="showall">Показать ещё</button>
         </div>
     </section>
 
@@ -50,13 +50,26 @@ export default {
     Gallery,
     Footer
   },
+  data() {
+    return {
+         NewsOnPage: 6
+    }
+  },
   computed: {
     Gallery() {
       return this.galleries.find((gallery) => gallery.id == this.$route.params.id)
+    },
+    
+  },
+  methods: {
+    photoSrc(photo) {
+      if (photo !== undefined) {
+        return photo.path
+      }
     }
   },
   async asyncData ({store}) {
-   await store.dispatch('actSetGalleries');
+  //  await store.dispatch('actSetGalleries');
       return {
         galleries: store.getters.getGalleries
     }
@@ -125,15 +138,52 @@ html {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1880px) {
+  html {
+  font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1880px) {
+  html {
+  font-size: 23px;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+  font-size: 22px;
+  }
+}
+
+@media (max-width: 1740px) {
+  html {
+  font-size: 21px;
+  }
+}
+
+@media (max-width: 1640px) {
   html {
   font-size: 20px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1540px) {
   html {
-  font-size: 28px;
+  font-size: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+  font-size: 18px;
+  }
+}
+
+@media (max-width: 1340px) {
+  html {
+  font-size: 16px;
   }
 }
 
@@ -143,21 +193,48 @@ html {
   }
 }
 
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
+  }
+}
+
 @media (max-width: 992px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
+  }
+}
+
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
   html {
-    font-size: 8px;
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+  font-size: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  #Navbar {
+    margin-bottom: 2vw;
+  }
+  html {
+    font-size: 7px;
   }
   .gallery main {
     display: grid;
@@ -168,7 +245,7 @@ html {
 
 @media (max-width: 420px) {
   html {
-    font-size: 7px;
+  font-size: 6px;
   }
   .gallery main {
     display: grid;
@@ -184,7 +261,7 @@ html {
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
+  font-size: 5px;
   }
 }
 

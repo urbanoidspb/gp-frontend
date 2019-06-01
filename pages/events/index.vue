@@ -8,7 +8,7 @@
     <section class="events">
         <h2 class="title">Мероприятия</h2>
         <main>
-          <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"   v-bind:event-participants="event.participants"/>
+          <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]" v-bind:event-participants="event.participants"/>
         </main>
         <div class="showallRow">
             <button v-on:click="eventsOnPage += 6" class="showall" to="/about">Показать ещё</button>
@@ -31,7 +31,7 @@
         accurateTrackBounce:true
    });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/53837686" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 <!-- /Yandex.Metrika counter -->
 
   </div>
@@ -58,7 +58,7 @@ export default {
   },
 
   async asyncData ({store}) {
-    await store.dispatch('actSetEvents');
+    // await store.dispatch('actSetEvents');
       return {
         events: store.getters.getEvents
     }
@@ -110,6 +110,7 @@ html {
     color: #023C71;
     font-weight: 500;
     outline: none;
+    cursor: pointer;
 }
 
 .background {
@@ -124,15 +125,52 @@ html {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1880px) {
+  html {
+  font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1880px) {
+  html {
+  font-size: 23px;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+  font-size: 22px;
+  }
+}
+
+@media (max-width: 1740px) {
+  html {
+  font-size: 21px;
+  }
+}
+
+@media (max-width: 1640px) {
   html {
   font-size: 20px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1540px) {
   html {
-  font-size: 28px;
+  font-size: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+  font-size: 18px;
+  }
+}
+
+@media (max-width: 1340px) {
+  html {
+  font-size: 16px;
   }
 }
 
@@ -142,49 +180,68 @@ html {
   }
 }
 
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
+  }
+}
+
 @media (max-width: 992px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
+  }
+}
+
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
+  html {
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
   html {
   font-size: 8px;
   }
-  .events main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2vw;
-  }  
+}
+
+@media (max-width: 576px) {
+  html {
+  font-size: 7px;
+  }
+  #Navbar {
+    margin-bottom: 2vw;
+  }
 }
 
 @media (max-width: 420px) {
   html {
-  font-size: 7px;
+  font-size: 6px;
   }
-  .events main,
-  .showallRow {
-    grid-template-columns: 1fr;
+  .events main {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 4vw;
     margin: 10vw 0;
   }  
   .events .showall {
-    grid-column: 1/4;
-    font-size: 2rem;
-    padding: 1rem 1.5rem;
+
   }
 }
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
+  font-size: 5px;
   }
 }
 

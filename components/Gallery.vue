@@ -1,6 +1,6 @@
 <template>
-    <section class="gallery" :style="{backgroundImage}">
-        <h2>{{galleryPhotos.length}} фотографий</h2>
+    <section class="gallery" :style="{background:backgroundImage}">
+        <h2>{{galleryPhotos.length}} фото</h2>
         <span class="data">{{galleryTime}}</span>
         <router-link :to="{ path: '/gallery/' + galleryId }"></router-link>
     </section>
@@ -13,12 +13,14 @@ export default {
     props: {
         galleryId: Number,
         galleryTime: String,
-        galleryPhotos: Array
+        galleryPhotos: Array,
     },
     computed: {
         backgroundImage() {
-                var style = 'url("' + this.galleryPhotos[0] + ") 50% 50% no-repeat;"
+            if (this.galleryPhotos[0] !== undefined) {
+                var style = 'url("' + this.galleryPhotos[0].path + ") 50% 50% no-repeat;"
                 return style;
+            }
         },
     }
 }
@@ -32,12 +34,11 @@ export default {
         padding: 0;
         width: 100%;
         height: 18vw;
-        border: 1px solid #71D5A2;
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
         color: white;
         box-shadow: inset -12px -181px 95px -72px rgba(0,0,0,0.75);
-        background-size: cover;
+        background-size: cover  !important;
         padding: 0.5rem 1rem;
         position: relative;
     }
@@ -62,18 +63,16 @@ export default {
     }
 
     @media (max-width: 576px) {
-        .gallery {
-            height: 30vw;
-        }
+
     }
 
     @media (max-width: 420px) {
         .gallery {
-            height: 50vw;
+            height: 30vw;
             padding: 1rem 2rem;
         }
         h2 {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
         span {

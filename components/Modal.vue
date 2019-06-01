@@ -59,7 +59,6 @@ export default {
     },
   computed: {
     сomeInStyle() { 
-      console.log(this.eventStatus, this.eventId)
             return {
                 background: this.eventStatus ? "#5EB8D3" : "#C4C4C4"
             }
@@ -80,7 +79,10 @@ export default {
 <style scoped>
 
 .сomeIn {
-        padding: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
         width: 100%;
         height: 100%;
         border: none;
@@ -201,11 +203,16 @@ input[type=tel] {
     right: 0;
 }
 
+@media (max-width: 850px) {
+  .сomeIn {
+    font-size: 1.4rem;
+  }
+}
+
 @media (max-width: 576px) {
 
-  .modal-container {
-    width: 70vw;
-    padding: 3rem;
+  .сomeIn {
+    font-size: 1.3rem;
   }
 
   label {
@@ -239,6 +246,18 @@ input[type=tel] {
   .toCloseBtn {
     width: 2rem;
     height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .сomeIn {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 420px) {
+   .сomeIn {
+    font-size: 1.7rem;
   }
 }
 

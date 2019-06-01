@@ -1,15 +1,15 @@
 <template>
     <section class="card">
-        <div class="photo" :style="{backgroundImage}">
+        <div class="photo" :style="{background:backgroundImage}">
             <span class="status">
                 <div class="circ" :style="circStyle"></div>
                 <span id="status" :style="statusStyle">{{statusText}}</span>
             </span>
             <router-link :to="{ path: '/events/' + eventId }"></router-link>
         </div>
-        <section class="info">
+        <section class="information">
             <router-link :to="{ path: '/events/' + eventId }" class="event_name">{{title}}</router-link>
-            <p class="date">{{eventTime}}</p>
+            <p class="event_date">{{eventTime}}</p>
             <Modal class="сomeIn" v-bind:event-id="eventId" v-bind:event-status="eventStatus"/>
         </section>
     </section>
@@ -28,15 +28,17 @@ export default {
         eventTitle: String,
         eventTime: String,
         eventStatus: Boolean,
-        eventPhoto: String
+        eventPhoto: Object
     },
     computed: {
         title() {
             return this.eventTitle.slice(0,40) + this.ellipsis
         },
         backgroundImage() {
-                var style = 'url("' + this.eventPhoto + ") 50% 50% no-repeat;"
+            if (this.eventPhoto !== undefined) {
+                var style = 'url("' + this.eventPhoto.path + ") 50% 50% no-repeat;"
                 return style;
+            }
         },
         statusText() {
             return this.eventStatus ? "Активно" : "Закончилось"
@@ -63,7 +65,7 @@ export default {
     .card {
         padding: 0;
         width: 100%;
-        height: 40vw;
+        height: 35vw;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
@@ -88,7 +90,7 @@ export default {
         width: 100%;
         height: 55%;
         padding: 1.5rem 1rem;
-        background-size: cover;
+        background-size: cover !important;
         position: relative;
     }
 
@@ -109,16 +111,16 @@ export default {
         margin-right: 0.3rem;
     }
 
-    .info {
-        display: flex;
+    .information {
+        display: flex ;
         flex-direction: column;
-        height: 45%;
+        height: 45% !important;
         align-items: center;
         justify-content: space-between;
         padding: 1rem;
     }
     
-    .event_name {
+    .information .event_name {
         width: 100%;
         text-align: center;
         font-size: 1.5rem;
@@ -126,55 +128,84 @@ export default {
         color: #323232;
     }
 
-    .date {
+    .information .event_date {
         font-size: 1.125rem;
         color: black;
     }
 
-    .сomeIn {
+    .information .сomeIn {
         width: 100%;
         height: 30%;
         padding: 0;
-        border: none;
-        font-size: 1.5rem;
-        background: #5EB8D3;
-        border-radius: 30px;
-        font-family: 'Rubik', sans-serif;
         outline: none;
-        color: white;
-        font-weight: 500;
         cursor: pointer;
+    }
+
+    @media (max-width: 576px) {
+        .information .event_name {
+            font-size: 1.5rem;
+        }
+        .information .event_date {
+            font-size: 1rem;
+        }
+        .information .сomeIn {
+            font-size: 2.5rem;
+        }
+        .photo {
+            padding: 1.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .information .event_name {
+            font-size: 1.2rem;
+        }
+        .information .event_date {
+            font-size: 1rem;
+        }
+        .information {
+            padding: 1rem;
+        }
+        .photo {
+            padding: 1.5rem;
+        }
     }
 
     @media (max-width: 420px) {
         .card {
-            height: 100vw;
+            height: 50vw;
         }
-         .status {
-            font-size: 2rem;
+        .status {
+            font-size: 1.2rem;
         }
-        .event_name {
-            font-size: 3rem;
+        .information .event_name {
+            font-size: 1.8rem;
         }
         .circ {
             width: 2em;
             height: 2em;
-            margin-right: 0.5rem;
+            margin-right: 0.3rem;
         }
         .photo {
-            padding: 2rem 2rem;
+            padding: 1.5rem 1.5rem;
         }
-        .date {
+        .information .event_date {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (max-width: 350px) {
+        .information .event_name {
             font-size: 2rem;
         }
-        button {
-            font-size: 3rem;
+        .information .event_date {
+            font-size: 1.5rem;
         }
-        .info {
-            padding: 2rem;
+        .information {
+            padding: 1rem;
         }
-        .сomeIn {
-            font-size: 2.5rem;
+        .photo {
+            padding: 1.5rem;
         }
     }
 </style>

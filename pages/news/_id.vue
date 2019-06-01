@@ -8,7 +8,7 @@
     <section class="news">
         <h2 class="title">{{NewsItem.title}}</h2>
         <article>
-            <img :src="NewsItem.photos[1]" alt="">
+            <img :src="photoSrc(NewsItem.photos)" alt="">
             <p>
                 {{NewsItem.text}}
             </p>
@@ -63,8 +63,15 @@ export default {
       return this.news.find((NewsItem) => NewsItem.id == this.$route.params.id)
     }
   },
+  methods: {
+    photoSrc(photos) {
+      if (photos[0] !== undefined) {
+        return photos[0].path
+      }
+    }
+  },
   async asyncData ({store}) {
-    await store.dispatch('actSetNews');
+    // await store.dispatch('actSetNews');
       return {
         news: store.getters.getNews
     }
@@ -104,7 +111,7 @@ html {
 }
 
 .news article p {
-    font-size: 16px;
+    font-size: 1.5rem;
     grid-column: 2/6;
     margin: 2vw 0;
 }
@@ -133,15 +140,52 @@ html {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1880px) {
+  html {
+  font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1880px) {
+  html {
+  font-size: 23px;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+  font-size: 22px;
+  }
+}
+
+@media (max-width: 1740px) {
+  html {
+  font-size: 21px;
+  }
+}
+
+@media (max-width: 1640px) {
   html {
   font-size: 20px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1540px) {
   html {
-  font-size: 28px;
+  font-size: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+  font-size: 18px;
+  }
+}
+
+@media (max-width: 1340px) {
+  html {
+  font-size: 16px;
   }
 }
 
@@ -151,36 +195,57 @@ html {
   }
 }
 
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
+  }
+}
+
 @media (max-width: 992px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
+  }
+}
+
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
+  html {
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
   html {
   font-size: 8px;
   }
-  .news main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2vw;
-  }  
+}
+
+@media (max-width: 576px) {
+  #Navbar {
+    margin-bottom: 2vw;
+  }
+  html {
+  font-size: 7px;
+  }
 }
 
 @media (max-width: 420px) {
   html {
-  font-size: 7px;
+  font-size: 6px;
   }
-  .news main {
-    display: grid;
-    grid-template-columns: 1fr;
+  .another_news main {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 4vw;
     margin: 4vw 0;
   }  
@@ -199,7 +264,7 @@ html {
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
+  font-size: 5px;
   }
 }
 

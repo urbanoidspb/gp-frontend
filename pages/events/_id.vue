@@ -10,11 +10,13 @@
         <h2 class="title">{{Event.title}}</h2>
         <h3 class="status" v-if="!Event.is_relevant">Акция завершена</h3>
         <article>
-            <img :src="Event.photos[1]" alt="">
+            <img :src="photoSrc(Event.photos)" alt="">
             <p>
                 {{Event.description}}
             </p>
-            <Modal id="Modal" v-bind:event-id="Event.id" v-bind:event-status="Event.is_relevant"/>
+            <div class="ModalRow">
+              <Modal id="Modal" v-bind:event-id="Event.id" v-bind:event-status="Event.is_relevant"/>
+            </div>
         </article>
         <section class="another_events">
             <header>
@@ -68,8 +70,15 @@ export default {
       return this.events.find((event) => event.id == this.$route.params.id)
     }
   },
+  methods: {
+    photoSrc(photos) {
+      if (photos[0] !== undefined) {
+        return photos[0].path
+      }
+    }
+  },
   async asyncData ({store}) {
-    await store.dispatch('actSetEvents');
+    // await store.dispatch('actSetEvents');
       return {
         events: store.getters.getEvents
     }
@@ -118,25 +127,22 @@ html {
 }
 
 .events article p {
-    font-size: 16px;
+    font-size: 1.5rem;
     grid-column: 2/6;
     margin: 2vw 0;
 }
 
+.ModalRow {
+  width: 100%;
+  height: 3.5rem;
+  grid-column: 3/5;
+  text-align: center;
+}
+
 article #Modal {
-    grid-column: 3/5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    background: #C4C4C4;
-    font-family: 'Rubik', sans-serif;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
+    height: 100%;
     color: white;
     font-weight: 500;
-    margin: 3vw 0;
     outline: none;
 }
 
@@ -164,15 +170,52 @@ article #Modal {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1880px) {
+  html {
+  font-size: 24px;
+  }
+}
+
+
+@media (max-width: 1880px) {
+  html {
+  font-size: 23px;
+  }
+}
+
+@media (max-width: 1840px) {
+  html {
+  font-size: 22px;
+  }
+}
+
+@media (max-width: 1740px) {
+  html {
+  font-size: 21px;
+  }
+}
+
+@media (max-width: 1640px) {
   html {
   font-size: 20px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1540px) {
   html {
-  font-size: 28px;
+  font-size: 19px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+  font-size: 18px;
+  }
+}
+
+@media (max-width: 1340px) {
+  html {
+  font-size: 16px;
   }
 }
 
@@ -182,36 +225,57 @@ article #Modal {
   }
 }
 
+@media (max-width: 1050px) {
+  html {
+  font-size: 13px;
+  }
+}
+
 @media (max-width: 992px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 910px) {
+  html {
+  font-size: 11px;
+  }
+}
+
+@media (max-width: 840px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 700px) {
+  html {
+  font-size: 9px;
+  }
+}
+
+@media (max-width: 650px) {
   html {
   font-size: 8px;
   }
-  .events main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2vw;
-  }  
+}
+
+@media (max-width: 576px) {
+  #Navbar {
+    margin-bottom: 2vw;
+  }
+  html {
+  font-size: 7px;
+  } 
 }
 
 @media (max-width: 420px) {
   html {
-  font-size: 7px;
+  font-size: 6px;
   }
-  .events main {
-    display: grid;
-    grid-template-columns: 1fr;
+  .another_events main {
+    grid-template-columns: 1fr 1fr;
     grid-gap: 4vw;
     margin: 4vw 0;
   }  
@@ -238,11 +302,15 @@ article #Modal {
     text-align: center;
     font-size: 2.5rem;
   }
+
+  article #Modal {
+    grid-column: 3/5;
+  }
 }
 
 @media (max-width: 360px) {
   html {
-  font-size: 6px;
+  font-size: 5px;
   }
 }
 
