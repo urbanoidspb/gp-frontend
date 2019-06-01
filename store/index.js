@@ -1,5 +1,6 @@
 import Vuex from 'vuex';
 import * as axios from 'axios';
+import HTTP from '../modules/http';
 
 const creatStore = () => {
     return new Vuex.Store({
@@ -35,22 +36,22 @@ const creatStore = () => {
         },
         actions: {
             async actSetEvents(context) {
-                const req = await axios.get('https://fea7511f.ngrok.io/api/events')
+                const req = await HTTP.get('events');
                 context.commit('setEvents', req.data);
             },
             async actSetNews(context) {
-                const req = await axios.get('https://fea7511f.ngrok.io/api/news ')
+                const req = await HTTP.get('news ')
                 context.commit('setNews', req.data);
             },
             async actSetGalleries(context) {
-                const req = await axios.get('https://fea7511f.ngrok.io/api/albums')
+                const req = await HTTP.get('albums')
                 context.commit('setGalleries', req.data);
             },
             submitParticipant (context, { eventId, participant }) {
               let Event = this.state.events.find((event) => event.id == eventId);
               context.commit('addParticipantToEvent', { Event, participant});
-              axios
-                .post('https://fea7511f.ngrok.io/api/events/1/join', participant)
+              HTTP
+                .post('events/1/join', participant)
             }
         }
 
