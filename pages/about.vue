@@ -143,7 +143,7 @@ html {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -155,7 +155,7 @@ html {
   grid-column: 4/12;
   margin: 2rem;
   font-size: 1.5rem;
-  line-height: 3rem;
+  line-height: 2.5rem;
 }
 
 .wrapper > img {
@@ -303,15 +303,15 @@ html {
   grid-column: 2/14;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 1920px) {
   html {
-  font-size: 18px;
+  font-size: 16px;
   }
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1440px) {
   html {
-  font-size: 25px;
+  font-size: 18px;
   }
 }
 

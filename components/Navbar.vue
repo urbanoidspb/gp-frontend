@@ -34,12 +34,12 @@ export default {
 <style scoped>
     nav {
         display: flex;
-        height: 8vw;
+        height: 4vw;
         align-items: center;
     }
 
     .logo {
-        height: 5.2rem;
+        height: 4.5rem;
         max-width: 10rem;
     }
 
