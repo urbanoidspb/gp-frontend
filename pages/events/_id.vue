@@ -78,7 +78,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-    await store.dispatch('actSetEvents');
+    // await store.dispatch('actSetEvents');
       return {
         events: store.getters.getEvents
     }
@@ -92,7 +92,7 @@ html {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -130,6 +130,7 @@ html {
     font-size: 1.5rem;
     grid-column: 2/6;
     margin: 2vw 0;
+    line-height: 2.5rem;
 }
 
 .ModalRow {
@@ -163,101 +164,82 @@ article #Modal {
   background: #0C6293;
   grid-column: 1/15;
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
 }
 
 #Footer {
   grid-column: 2/14;
 }
 
-@media (min-width: 1880px) {
-  html {
-  font-size: 24px;
-  }
-}
-
-
-@media (max-width: 1880px) {
-  html {
-  font-size: 23px;
-  }
-}
-
-@media (max-width: 1840px) {
-  html {
-  font-size: 22px;
-  }
-}
-
-@media (max-width: 1740px) {
-  html {
-  font-size: 21px;
-  }
-}
-
-@media (max-width: 1640px) {
-  html {
-  font-size: 20px;
-  }
-}
-
-@media (max-width: 1540px) {
-  html {
-  font-size: 19px;
-  }
-}
-
-@media (max-width: 1440px) {
-  html {
-  font-size: 18px;
-  }
-}
-
-@media (max-width: 1340px) {
+@media (min-width: 1920px) {
   html {
   font-size: 16px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1675px) {
+  html {
+  font-size: 15px;
+  }
+}
+
+@media (max-width: 1575px) {
   html {
   font-size: 14px;
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1475px) {
   html {
   font-size: 13px;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1375px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 910px) {
+@media (max-width: 1275px) {
   html {
   font-size: 11px;
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 1175px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1075px) {
   html {
   font-size: 9px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 975px) {
   html {
   font-size: 8px;
+  }
+}
+
+@media (max-width: 885px) {
+  html {
+  font-size: 7px;
+  }
+}
+
+@media (max-width: 775px) {
+  html {
+  font-size: 6px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+  font-size: 5px;
   }
 }
 
@@ -266,11 +248,14 @@ article #Modal {
     margin-bottom: 2vw;
   }
   html {
-  font-size: 7px;
+  font-size: 4px;
   } 
 }
 
 @media (max-width: 420px) {
+  .wrapper {
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
+}
   html {
   font-size: 6px;
   }
@@ -286,7 +271,7 @@ article #Modal {
   }
 
   .events .title {
-    margin: 6rem 0 2rem;
+    margin: 4rem 0 2rem;
   }
 
   .events article img {
@@ -305,6 +290,9 @@ article #Modal {
 
   article #Modal {
     grid-column: 3/5;
+  }
+  #Navbar {
+    margin-bottom: 5vw;
   }
 }
 

@@ -296,7 +296,7 @@ html {
   background: #0C6293;
   grid-column: 1/15;
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
 }
 
 #Footer {
@@ -309,71 +309,68 @@ html {
   }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1675px) {
   html {
-  font-size: 18px;
+  font-size: 15px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1575px) {
   html {
   font-size: 14px;
   }
-  .joinUs {
-  height: 65vw;
-  }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1475px) {
   html {
   font-size: 13px;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1375px) {
   html {
   font-size: 12px;
   }
-  .joinUs {
-  height: 70vw;
-  }
 }
 
-@media (max-width: 910px) {
+@media (max-width: 1275px) {
   html {
   font-size: 11px;
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 1175px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 780px) {
-
-  .joinUs {
-  height: 70vw;
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 1075px) {
   html {
   font-size: 9px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 975px) {
   html {
   font-size: 8px;
   }
+
 }
 
-@media (max-width: 576px) {
+@media (max-width: 885px) {
   html {
   font-size: 7px;
   }
+}
+
+@media (max-width: 775px) {
+  html {
+  font-size: 6px;
+  }
+}
+
+@media (max-width: 700px) {
   .left_column {
     grid-column: 1/13;
     font-size: 1.5rem;
@@ -381,9 +378,33 @@ html {
   #Navbar {
     margin-bottom: 2vw;
   }
+}
 
   .right_column {
     grid-column: 1/13;
+}
+.projects {
+    grid-column: 2/14;
+}
+
+@media (max-width: 650px) {
+  html {
+  font-size: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+  font-size: 4px;
+  }
+  .wrapper > p {
+    grid-column: 3/13;
+  }
+  .leads main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10vw; 
+    margin-top: 6vw;   
   }
 }
 
@@ -391,6 +412,9 @@ html {
   html {
   font-size: 6px;
   }
+  .wrapper {
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
+}
   .wrapper > p {
     grid-column: 2/14;
     font-size: 2rem;
@@ -402,7 +426,6 @@ html {
   }
 
   .projects main {
-    display: grid;
     grid-template-columns: 1fr;
     grid-gap: 2vw;
   }
@@ -410,7 +433,6 @@ html {
     background: transparent;
     color: #5EB8D3;
     padding: 0;
-    margin: 1rem;
     font-size: 2rem;
   }
 
@@ -419,13 +441,6 @@ html {
     background: #5EB8D3;
     color: white;
     padding: 3rem;
-  }
-
-  .leads main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10vw; 
-    margin-top: 6vw;   
   }
 
   .fullname {

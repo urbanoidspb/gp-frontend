@@ -89,12 +89,12 @@ export default {
             flex-direction: column;
             align-items: flex-start;
             z-index: 1000;
+            margin-left: -4rem;
         }
 
         ul {
-            width: 100vw;
+            width: 110%;
             align-items: center;
-            margin-left: -8rem;
             padding: 1rem 0;
             background: white;
         }
@@ -112,11 +112,25 @@ export default {
         }
 
         .burger_btn {
-            margin-top: 2.5vw;
+            margin-top: 1.4vw;
             align-self: flex-end;
             display: initial;
             position: absolute;
             cursor: pointer;
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    @media (max-width: 650px) {
+        .burger_btn {
+            margin-top: 1vw;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .burger_btn {
+            margin-top: 0.7vw;
         }
     }
 
@@ -126,9 +140,6 @@ export default {
             max-width: 12rem;
         }
 
-        ul {
-            margin-left: -7rem;
-        }
 
         .burger_btn {
             margin-top: 5vw;

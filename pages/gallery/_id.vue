@@ -5,7 +5,7 @@
       <Navbar id="Navbar"/>
     </no-ssr>
 
-    <section class="gallery">
+    <section class="gallery_id">
         <h2 class="title">Санкт-Петербург</h2>
         <main>
             <img v-for="photo in Gallery.photos.slice(0, this.NewsOnPage)" v-bind:key="photo" :src="photoSrc(photo)" alt="">
@@ -69,7 +69,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-   await store.dispatch('actSetGalleries');
+  //  await store.dispatch('actSetGalleries');
       return {
         galleries: store.getters.getGalleries
     }
@@ -83,7 +83,7 @@ html {
 }
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -91,13 +91,13 @@ html {
   grid-column: 2/14;
 }
 
-.gallery .title {
+.gallery_id .title {
     text-align: center;
     font-size: 3rem;
     margin-top: 4rem;
 }
 
-.gallery main,
+.gallery_id main,
 .showallRow {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -105,11 +105,11 @@ html {
   margin: 5vw 0;
 }
 
-.gallery main img {
+.gallery_id main img {
     width: 100%;
 }
 
-.gallery .showall {
+.gallery_id .showall {
     grid-column: 2/3;
     display: flex;
     justify-content: center;
@@ -131,101 +131,82 @@ html {
   background: #0C6293;
   grid-column: 1/15;
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
 }
 
 #Footer {
   grid-column: 2/14;
 }
 
-@media (min-width: 1880px) {
-  html {
-  font-size: 24px;
-  }
-}
-
-
-@media (max-width: 1880px) {
-  html {
-  font-size: 23px;
-  }
-}
-
-@media (max-width: 1840px) {
-  html {
-  font-size: 22px;
-  }
-}
-
-@media (max-width: 1740px) {
-  html {
-  font-size: 21px;
-  }
-}
-
-@media (max-width: 1640px) {
-  html {
-  font-size: 20px;
-  }
-}
-
-@media (max-width: 1540px) {
-  html {
-  font-size: 19px;
-  }
-}
-
-@media (max-width: 1440px) {
-  html {
-  font-size: 18px;
-  }
-}
-
-@media (max-width: 1340px) {
+@media (min-width: 1920px) {
   html {
   font-size: 16px;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1675px) {
+  html {
+  font-size: 15px;
+  }
+}
+
+@media (max-width: 1575px) {
   html {
   font-size: 14px;
   }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1475px) {
   html {
   font-size: 13px;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1375px) {
   html {
   font-size: 12px;
   }
 }
 
-@media (max-width: 910px) {
+@media (max-width: 1275px) {
   html {
   font-size: 11px;
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 1175px) {
   html {
   font-size: 10px;
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1075px) {
   html {
   font-size: 9px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 975px) {
   html {
   font-size: 8px;
+  }
+}
+
+@media (max-width: 885px) {
+  html {
+  font-size: 7px;
+  }
+}
+
+@media (max-width: 775px) {
+  html {
+  font-size: 6px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+  font-size: 5px;
   }
 }
 
@@ -234,20 +215,22 @@ html {
     margin-bottom: 2vw;
   }
   html {
-    font-size: 7px;
+    font-size: 4px;
   }
-  .gallery main {
-    display: grid;
+  .gallery_id main {
     grid-template-columns: 1fr 1fr;
     grid-gap: 2vw;
   }  
 }
 
 @media (max-width: 420px) {
+  .wrapper {
+  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
+}
   html {
   font-size: 6px;
   }
-  .gallery main {
+  .gallery_id main {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 4vw;

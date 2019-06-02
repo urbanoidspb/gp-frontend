@@ -65,7 +65,7 @@ export default {
     .card {
         padding: 0;
         width: 100%;
-        height: 35vw;
+        height: 25vw;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
@@ -143,7 +143,7 @@ export default {
 
     @media (max-width: 576px) {
         .information .event_name {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
         .information .event_date {
             font-size: 1rem;
@@ -157,18 +157,7 @@ export default {
     }
 
     @media (max-width: 480px) {
-        .information .event_name {
-            font-size: 1.2rem;
-        }
-        .information .event_date {
-            font-size: 1rem;
-        }
-        .information {
-            padding: 1rem;
-        }
-        .photo {
-            padding: 1.5rem;
-        }
+
     }
 
     @media (max-width: 420px) {
@@ -179,7 +168,7 @@ export default {
             font-size: 1.2rem;
         }
         .information .event_name {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
         }
         .circ {
             width: 2em;
@@ -190,7 +179,7 @@ export default {
             padding: 1.5rem 1.5rem;
         }
         .information .event_date {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
         }
     }
 

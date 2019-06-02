@@ -33,7 +33,7 @@ export default {
         justify-content: flex-end;
         padding: 0;
         width: 100%;
-        height: 18vw;
+        height: 12vw;
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
         color: white;
@@ -62,8 +62,30 @@ export default {
         bottom: 0;
     }
 
-    @media (max-width: 576px) {
+    @media (max-width: 992px) {
+         .gallery {
+            padding: 1rem 1.5rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        span {
+            font-size: 0.9rem;
+        }
+    }
 
+    @media (max-width: 650px) {
+         .gallery {
+            padding: 1.1rem 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        span {
+            font-size: 0.9rem;
+        }
     }
 
     @media (max-width: 420px) {

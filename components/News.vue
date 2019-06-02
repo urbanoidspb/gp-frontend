@@ -44,7 +44,7 @@ export default {
         justify-content: flex-end;
         padding: 0;
         width: 100%;
-        height: 18vw;
+        height: 12vw;
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
         color: white;
@@ -72,6 +72,19 @@ export default {
 
     .news_data {
         font-size: 0.8rem;
+    }
+
+    @media (max-width: 576px) {
+        .news {
+            padding: 1.5rem 2rem;
+        }
+        h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .news_data {
+            font-size: 0.9rem;
+        }
     }
 
     @media (max-width: 420px) {

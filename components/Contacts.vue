@@ -37,6 +37,7 @@ export default {
         font-size: 1.125rem;
         padding: 0.3em 0;
         border-bottom: 1px solid #D6D5D5;
+        margin-bottom: 0.5rem;
     }
 
     .contacts_item {
