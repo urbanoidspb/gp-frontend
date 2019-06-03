@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -11,9 +12,10 @@
           <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]" v-bind:event-participants="event.participants"/>
         </main>
         <div class="showallRow">
-            <button v-on:click="eventsOnPage += 6" class="showall" to="/about">Показать ещё</button>
+            <button v-on:click="eventsOnPage += 6" v-if="!(this.eventsOnPage >= events.length)" class="showall" to="/about">Показать ещё</button>
         </div>
     </section>
+  </div>
 
     <div class="background">
         <Footer id="Footer"/>
@@ -58,7 +60,7 @@ export default {
   },
 
   async asyncData ({store}) {
-    // await store.dispatch('actSetEvents');
+    await store.dispatch('actSetEvents');
       return {
         events: store.getters.getEvents
     }
@@ -228,4 +230,15 @@ html {
   }
 }
 
+@media (min-width: 420px) and (orientation: portrait) { 
+ .background {
+   margin-top: 30vh;
+  }
+}
+
+@media (max-width: 1175px) and (orientation: portrait) { 
+ .background {
+   margin-top: 45vh;
+  }
+}
 </style>

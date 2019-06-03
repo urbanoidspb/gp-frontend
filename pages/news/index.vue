@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -11,10 +12,10 @@
           <News v-for="NewsItem in news.slice(0, this.NewsOnPage)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
         </main>
         <div class="showallRow">
-            <button v-on:click="NewsOnPage += 6" class="showall" to="/about">Показать ещё</button>
+            <button v-on:click="NewsOnPage += 6" v-if="!(this.NewsOnPage >= news.length)" class="showall" to="/about">Показать ещё</button>
         </div>
     </section>
-
+    </div>
     <div class="background">
         <Footer id="Footer"/>
     </div>
@@ -58,7 +59,7 @@ export default {
   },
 
   async asyncData ({store}) {
-      // await store.dispatch('actSetNews');
+      await store.dispatch('actSetNews');
       return {
         news: store.getters.getNews
     }
@@ -117,7 +118,7 @@ html {
   background: #0C6293;
   grid-column: 1/15;
   display: grid;
-  grid-template-columns: repeat(14, 1fr);
+  grid-template-columns: 4fr repeat(12, 1fr) 4fr;
 }
 
 #Footer {
@@ -223,6 +224,19 @@ html {
 @media (max-width: 360px) {
   html {
   font-size: 5px;
+  }
+}
+
+
+@media (min-width: 420px) and (orientation: portrait) { 
+ .background {
+   margin-top: 30vh;
+  }
+}
+
+@media (max-width: 1175px) and (orientation: portrait) { 
+ .background {
+   margin-top: 45vh;
   }
 }
 

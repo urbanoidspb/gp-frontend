@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -22,7 +23,7 @@
             </main>
         </section>
     </section>
-
+    </div>
     <div class="background">
         <Footer id="Footer"/>
     </div>
@@ -71,7 +72,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-    // await store.dispatch('actSetNews');
+    await store.dispatch('actSetNews');
       return {
         news: store.getters.getNews
     }
@@ -253,6 +254,18 @@ html {
 @media (max-width: 360px) {
   html {
   font-size: 5px;
+  }
+}
+
+@media (min-width: 420px) and (orientation: portrait) { 
+ .background {
+   margin-top: 30vh;
+  }
+}
+
+@media (max-width: 1175px) and (orientation: portrait) { 
+ .background {
+   margin-top: 45vh;
   }
 }
 

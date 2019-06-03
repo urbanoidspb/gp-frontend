@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -57,8 +58,8 @@
     <h2 class="best_wishes">Желаем всем удачи!</h2>
 
     <router-link class="enter" to="/about">Подать заявку</router-link>
-
-    <div class="background">
+    </div>
+    <div class="stand_background">
         <Footer id="Footer"/>
     </div>
 
@@ -254,7 +255,7 @@ section.aims main {
   margin-bottom: 4rem;
 }
 
-.background {
+.stand_background {
   width: 100%;
   background: #0C6293;
   grid-column: 1/15;

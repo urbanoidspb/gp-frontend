@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -46,8 +47,9 @@
           <News v-for="NewsItem in news.slice(0, 3)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
         </main>
     </section>
+    </div>
 
-    <div class="background">
+    <div class="stand_background">
         <Footer id="Footer"/>
     </div>
 
@@ -66,7 +68,8 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/53837686" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-  </div>
+  
+</div>
 </template>
 
 <script>
@@ -85,8 +88,8 @@ export default {
     Footer
   },
   async asyncData ({store}) {
-      // await store.dispatch('actSetEvents');
-      // await store.dispatch('actSetNews');
+      await store.dispatch('actSetEvents');
+      await store.dispatch('actSetNews');
       return {
         events: store.getters.getEvents,
         news: store.getters.getNews
@@ -217,7 +220,7 @@ html {
   margin: 5vw 0;
 }
 
-.background {
+.stand_background {
   width: 100%;
   background: #0C6293;
   grid-column: 1/15;

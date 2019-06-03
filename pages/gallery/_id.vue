@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -8,13 +9,13 @@
     <section class="gallery_id">
         <h2 class="title">Санкт-Петербург</h2>
         <main>
-            <img v-for="photo in Gallery.photos.slice(0, this.NewsOnPage)" v-bind:key="photo" :src="photoSrc(photo)" alt="">
+            <img v-for="photo in Gallery.photos.slice(0, this.PhotosOnPage)" v-bind:key="photo" :src="photoSrc(photo)" alt="">
         </main>
         <div class="showallRow">
-            <button v-on:click="PhotosOnPage += 6" class="showall">Показать ещё</button>
+            <button v-on:click="PhotosOnPage += 6" class="showall" v-if="!(this.PhotosOnPage >= Gallery.photos.length)">Показать ещё</button>
         </div>
     </section>
-
+    </div>
     <div class="background">
         <Footer id="Footer"/>
     </div>
@@ -52,7 +53,7 @@ export default {
   },
   data() {
     return {
-         NewsOnPage: 6
+         PhotosOnPage: 6
     }
   },
   computed: {
@@ -69,7 +70,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-  //  await store.dispatch('actSetGalleries');
+   await store.dispatch('actSetGalleries');
       return {
         galleries: store.getters.getGalleries
     }
@@ -245,6 +246,18 @@ html {
 @media (max-width: 360px) {
   html {
   font-size: 5px;
+  }
+}
+
+@media (min-width: 420px) and (orientation: portrait) { 
+ .background {
+   margin-top: 30vh;
+  }
+}
+
+@media (max-width: 1175px) and (orientation: portrait) { 
+ .background {
+   margin-top: 45vh;
   }
 }
 

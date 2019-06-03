@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -14,10 +15,10 @@
             </div>
         </main>
         <div class="showallRow">
-            <button v-on:click="galleriesOnPage += 6" class="showall" to="/about">Показать ещё</button>
+            <button v-on:click="galleriesOnPage += 6" v-if="!(this.galleriesOnPage >= galleries.length)" class="showall" to="/about">Показать ещё</button>
         </div>
     </section>
-
+    </div>
     <div class="background">
         <Footer id="Footer"/>
     </div>
@@ -59,7 +60,7 @@ export default {
     }
   },
   async asyncData ({store}) {
-      // await store.dispatch('actSetGalleries');
+      await store.dispatch('actSetGalleries');
       return {
         galleries: store.getters.getGalleries
     }
@@ -244,6 +245,18 @@ html {
 @media (max-width: 360px) {
   html {
   font-size: 5px;
+  }
+}
+
+@media (min-width: 420px) and (orientation: portrait) { 
+ .background {
+   margin-top: 30vh;
+  }
+}
+
+@media (max-width: 1175px) and (orientation: portrait) { 
+ .background {
+   margin-top: 45vh;
   }
 }
 

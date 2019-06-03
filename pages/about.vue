@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="wrapper">
     <Contacts/>
     <no-ssr>
@@ -95,11 +96,11 @@
             </span>
         </div>
         <div class="right_column">
-            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab2bd824b292614fe916d8a2cb2a8c17fd48579b2c083e687a4c498b1cca6451a&amp;width=100%;height=80vw;lang=ru_RU&amp;scroll=true"></script>
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad14c3274f35025eb9fcd213d64dcafb4fb7dbd4eab063137505fc18e03c3e0e7&amp;width=100%25&amp;height=40vw&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </section>
-
-    <div class="background">
+    </div>
+    <div class="stand_background">
         <Footer id="Footer"/>
     </div>
 
@@ -291,7 +292,7 @@ html {
     width: 100%;
 }
 
-.background {
+.stand_background {
   width: 100%;
   background: #0C6293;
   grid-column: 1/15;
