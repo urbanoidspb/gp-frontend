@@ -107,7 +107,9 @@ export default {
         font-weight: 500;
         font-size: 0.875rem;
         color: #4AE0B3;
-        text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+        max-width: 47%;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
     }
 
     .circ {
@@ -116,7 +118,7 @@ export default {
         background: #4AE0B3;
         border-radius: 50%;
         margin-right: 0.3rem;
-        box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.5);
     }
 
     .information {
