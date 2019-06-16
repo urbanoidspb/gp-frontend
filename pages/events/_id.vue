@@ -283,6 +283,7 @@ article #Modal {
 .events article p {
     grid-column: 1/7;
     margin: 5vw 0;
+    font-size: 2.2rem;
   }
 
   .another_events header h3 {

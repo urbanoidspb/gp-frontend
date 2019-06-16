@@ -359,6 +359,9 @@ html {
   .joinUs > img {
   margin: -1rem 0;
   }
+  .joinUs p {
+    font-size: 1rem;
+  } 
 }
 
 @media (max-width: 360px) {

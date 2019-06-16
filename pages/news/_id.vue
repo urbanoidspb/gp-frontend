@@ -242,6 +242,7 @@ html {
   .news article p {
     grid-column: 1/7;
     margin: 5vw 0 2vw;
+    font-size: 2.2rem;
   }
   .another_news header h3 {
     font-size: 2.5rem;

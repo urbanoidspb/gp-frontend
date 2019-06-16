@@ -238,6 +238,14 @@ input[type=tel] {
   }
 }
 
+@media (min-width: 1450px) {
+   .сomeIn {
+    font-size: 2rem;
+    padding: 1.3rem 2rem;
+    height: 4.6rem;
+  }
+}
+
 @media (max-width: 480px) {
   .modal-container {
   width: 60vw;
