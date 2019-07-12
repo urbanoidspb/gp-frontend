@@ -1,7 +1,7 @@
 <template>
 <div>
+  <Contacts/>
   <div class="wrapper">
-    <Contacts/>
     <no-ssr>
       <Navbar id="Navbar"/>
     </no-ssr>

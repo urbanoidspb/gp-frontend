@@ -1,15 +1,17 @@
 <template>
-    <section class="contacts">
-        <nav class="contacts_item contacts_item_left">
-            <a href="tel:+79822312466">+7(982)-231-24-66</a>
-            <a href="mailto:gorod@peremen.ru">gorod@peremen.ru</a>
-        </nav>
-        <nav class="contacts_item contacts_item_right">
-            <a href="https://www.youtube.com/channel/UCr26U87t9bCn7m4jtEhh4og" target="_blank"><img src="~/assets/youtube.png" alt=""></a>
-            <a href="https://vk.com/spbperemen" target="_blank"><img src="~/assets/vk.png" alt=""></a>
-            <a href="https://www.instagram.com/peterburggorod/" target="_blank"><img src="~/assets/insta.png" alt=""></a>
-        </nav>
-    </section>
+    <div class="block_for_underline">
+        <section class="contacts">
+            <nav class="contacts_item contacts_item_left">
+                <a href="tel:+79822312466">+7(982)-231-24-66</a>
+                <a href="mailto:gorod@peremen.ru">gorod@peremen.ru</a>
+            </nav>
+            <nav class="contacts_item contacts_item_right">
+                <a href="https://www.youtube.com/channel/UCr26U87t9bCn7m4jtEhh4og" target="_blank"><img src="~/assets/youtube.png" alt=""></a>
+                <a href="https://vk.com/spbperemen" target="_blank"><img src="~/assets/vk.png" alt=""></a>
+                <a href="https://www.instagram.com/peterburggorod/" target="_blank"><img src="~/assets/insta.png" alt=""></a>
+            </nav>
+        </section>
+    </div>
 </template>
 
 <script>
@@ -30,14 +32,21 @@ export default {
         padding-right: 0;
     }
 
+    .block_for_underline {
+        display: grid;
+        grid-template-columns: 1fr repeat(12, 1fr) 1fr;
+        border-bottom: 1px solid #D6D5D5;
+        
+        margin-bottom: 0.5rem;
+    }
+
     .contacts {
+        grid-column: 2/14;
         display: flex;
         align-items: center;
         font-family: 'Rubik', sans-serif;
         font-size: 1.125rem;
         padding: 0.3em 0;
-        border-bottom: 1px solid #D6D5D5;
-        margin-bottom: 0.5rem;
     }
 
     .contacts_item {
