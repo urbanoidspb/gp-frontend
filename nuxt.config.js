@@ -1,3 +1,14 @@
+const axios = require('axios')
+
+const events = axios.get('https://peremen.live/api/events')
+.then(res => res.data.map(event => '/events/' + event.id));
+
+const news = axios.get('https://peremen.live/api/news')
+.then(res => res.data.map(newsitem => '/news/' + newsitem.id));
+
+const albums = axios.get('https://peremen.live/api/albums')
+.then(res => res.data.map(album => '/gallery/' + album.id));
+
 module.exports = {
   /*
   ** Headers of the page
@@ -13,6 +24,18 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap' }
     ],
+  },
+  modules: [
+    '@nuxtjs/sitemap'
+  ],
+  sitemap: {
+    hostname: 'https://peremen.live',
+    gzip: true,
+    routes () {
+      return Promise.all([events, news, albums]).then(function (ally) {
+        return ally[0].concat(ally[1].concat(ally[2]))
+      });
+    }
   },
   /*
   ** Customize the progress bar color

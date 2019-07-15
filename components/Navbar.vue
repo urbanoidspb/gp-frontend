@@ -80,12 +80,26 @@ export default {
         margin-left: 3rem;
     }
 
+    @media (min-width: 765px) {
+         li:last-child > a {
+        color: #fff;
+        padding: 0.5rem 1.5rem;
+        background: #0C6293;
+        border: 1px solid #0C6293;
+        border-radius: 30px;
+        }
+    }
+
     .active{
         color: #0C6293;
     }
 
     li > a:hover {
         color: #0C6293;
+    }
+
+    li:last-child > a:hover {
+        background: #fff;
     }
 
 

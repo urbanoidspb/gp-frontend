@@ -26,7 +26,7 @@
         </div>
         <div class="feature">
             <img src="~/assets/pointstar.png" alt="">
-            <h2>Отслеживайте и посещайте мероприятия</h2>
+            <h2>Отслеживайте и<br> посещайте мероприятия</h2>
         </div>
         <div class="feature">
             <img src="~/assets/qr.png" alt="">
@@ -180,6 +180,9 @@ margin-right: 3rem;
     width: 85%;
     margin-left: 10%;
 }
+
+
+
 
 .hero_features {
     display: grid;
@@ -552,6 +555,165 @@ margin-right: 3rem;
   .title {
       margin: 6rem 0 3rem;
   }
+
+  .herous_sign_in {
+        grid-template-columns: 1fr;
+    }
+
+    .herous_sign_in img {
+        margin-left: 0;
+        order: -1;
+        margin: 0 auto 3rem;
+    }
+
+    .herous_sign_in p {
+        font-size: 2rem;
+        line-height: 3.5rem;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .herous_sign_in .Particip {
+        margin: 2rem auto;
+    }
+
+    .hero_features {
+        grid-template-columns: 1fr;
+        margin: 5vw 0;
+        grid-gap: 10vw 0vw;
+    }
+
+    .feature:nth-child(1) {
+        grid-column: 1;
+    }
+    .feature:nth-child(2) {
+        grid-column: 1;
+    }
+    .feature:nth-child(3) {
+        grid-column: 1;
+    }
+    .feature:nth-child(4) {
+        grid-column: 1;
+    }
+    .feature:nth-child(5) {
+        grid-column: 1;
+    }
+
+    .feature::before {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .feature::after {
+        bottom: 0;
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .feature:nth-child(4)::before,
+    .feature:nth-child(5)::before {
+        top: -10%;
+        left: 15%;
+        width: 23rem;
+        height: 23rem;
+    }
+
+    .feature:nth-child(4)::after,
+    .feature:nth-child(5)::after {
+        bottom: -5%;
+        right: 20%;
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .feature img {
+        margin-bottom: 3.5rem;
+        width: 40%;
+    }
+
+    .feature h2 {
+        font-size: 3rem;
+        line-height: 3.3rem;
+        letter-spacing: 0.1rem;
+    }
+
+    
+
+    .hero_info_block {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 5vw;
+        margin: 6rem 0;
+        position: relative;
+    }
+
+    .hero_info_column h2 {
+        font-size: 4rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .hero_info_column p {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 3.5rem;
+    }
+
+    .hero_events  .hero_assets_column{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .hero_rating {
+        grid-template-columns: 1fr;
+        padding: 0;
+        grid-gap: 4vw;
+    }
+
+
+    .hero_rating .hero_info_column {
+        margin-right:0;
+        order: -1;
+    }
+
+    .hero_rating .hero_assets_column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero_rating .hero_assets_column img {
+        margin-bottom: 0;
+        width: 70%;
+    }
+
+    .hero_rating_2 .hero_assets_column {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .hero_rating_2 .hero_assets_column img {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .hero_rating_2 img:nth-child(1) {
+        grid-column: 2/4;
+    }
+
+    .hero_rating_2 img:nth-child(2) {
+        grid-column: 1/3;
+        margin-top: -1.5rem;
+    }
+
+    .hero_rating_2 img:nth-child(3) {
+        grid-column: 3/5;
+        margin-top: 5rem;
+    }
 }
 
 @media (max-width: 360px) {

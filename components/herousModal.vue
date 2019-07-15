@@ -273,7 +273,7 @@ input[type=tel] {
   transform: scale(1.1);
 }
 
-.takePart {
+.takeHero {
   width: 100%;
   font-weight: bold;
   font-size: 3rem;
@@ -283,7 +283,7 @@ input[type=tel] {
   border-radius: 100px;
   text-decoration: none;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 5rem;
   cursor: pointer;
   height: 8rem;
   outline: none;
