@@ -6,6 +6,8 @@
       <Navbar id="Navbar"/>
     </no-ssr>
 
+    <up v-if="(this.eventsOnPage > 6)"/>
+
     <section class="events">
         <h2 class="title">Мероприятия</h2>
         <main>
@@ -43,6 +45,7 @@
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
 import Event from '~/components/Event.vue'
+import up from '~/components/up.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
@@ -50,6 +53,7 @@ export default {
     Contacts,
     Navbar,
     Event,
+    up,
     Footer
   },
 
@@ -72,6 +76,7 @@ export default {
 <style>
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 .wrapper {
   display: grid;

@@ -4,11 +4,12 @@
         <button class="burger_btn"><img class="burger" @click="show = !show" key="openburger" src="~/assets/burger.png" alt=""></button>
         <transition name="fade">
             <ul v-if="show||showMenu()">
-                <li><router-link to="/about">О нас</router-link></li>
-                <li><router-link to="/changes">Плафторма перемен</router-link></li>
-                <li><router-link to="/events">Мероприятия</router-link></li>
-                <li><router-link to="/news">Новости</router-link></li>
-                <li><router-link to="/gallery">Галерея</router-link></li>
+                <li><router-link to="/about" active-class="active">О нас</router-link></li>
+                <li><router-link to="/changes" active-class="active">Плафторма перемен</router-link></li>
+                <li><router-link to="/events" active-class="active">Мероприятия</router-link></li>
+                <li><router-link to="/news" active-class="active">Новости</router-link></li>
+                <li><router-link to="/gallery" active-class="active">Галерея</router-link></li>
+                <li><router-link to="/herous" active-class="active">Город героев</router-link></li>
             </ul>
        </transition>
     </nav>
@@ -77,6 +78,10 @@ export default {
         font-weight: 500;
         padding: 0.5rem;
         margin-left: 3rem;
+    }
+
+    .active{
+        color: #0C6293;
     }
 
     li > a:hover {

@@ -66,11 +66,11 @@
                 <h4 class="fullname">Никита Донцов</h4>
                 <h5 class="post">cопредседатель движения</h5>
             </div>
-            <div class="lead">
+            <!-- <div class="lead">
                 <img class="avatar avatar3" src="~/assets/avatar3.png" alt="">
                 <h4 class="fullname">Екатерина Зиновкина</h4>
                 <h5 class="post">cовет движения</h5>
-            </div>
+            </div> -->
             <div class="lead">
                 <img class="avatar avatar4" src="~/assets/avatar4.png" alt="">
                 <h4 class="fullname">Андрей Калашников</h4>
@@ -219,7 +219,7 @@ html {
 
 .leads main {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 3vw; 
     margin-top: 6vw;   
 }
@@ -232,7 +232,7 @@ html {
 }
 
 .avatar {
-    width: 100%;
+    width: 80%;
     border-radius: 50%;
     border: 1px solid #71D5A2;
 }
@@ -408,9 +408,19 @@ html {
   }
   .leads main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
     grid-gap: 10vw; 
     margin-top: 6vw;   
+  }
+
+  .leads main .lead:nth-child(1) {
+    grid-column: 1/5;
+  }
+  .leads main .lead:nth-child(2) {
+    grid-column: 5/9;
+  }
+  .leads main .lead:nth-child(3) {
+    grid-column: 3/7;
   }
 }
 

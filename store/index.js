@@ -1,6 +1,6 @@
 import Vuex from 'vuex';
 import * as axios from 'axios';
-import HTTP from '../modules/http';
+import HTTPS from '../modules/https';
 
 const creatStore = () => {
     return new Vuex.Store({
@@ -36,25 +36,25 @@ const creatStore = () => {
         },
         actions: {
             async actSetEvents(context) {
-                const req = await HTTP.get('events');
+                const req = await HTTPS.get('events');
                 context.commit('setEvents', req.data);
             },
             async actSetNews(context) {
-                const req = await HTTP.get('news ')
+                const req = await HTTPS.get('news ')
                 context.commit('setNews', req.data);
             },
             async actSetGalleries(context) {
-                const req = await HTTP.get('albums')
+                const req = await HTTPS.get('albums')
                 context.commit('setGalleries', req.data);
             },
             submitParticipant (context, { eventId, participant }) {
               let Event = this.state.events.find((event) => event.id == eventId);
               context.commit('addParticipantToEvent', { Event, participant});
-              HTTP
+              HTTPS
                 .post('events/' + eventId + '/join', participant)
             },
             submitMember (context, { member }) {
-                HTTP
+                HTTPS
                     .post('members/join', member)
             }
         }

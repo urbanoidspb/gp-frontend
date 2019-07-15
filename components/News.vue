@@ -61,7 +61,6 @@ export default {
     }
 
     h2 {
-        text-decoration: underline; 
         font-weight: 500;
         font-size: 1.5rem;
         margin-bottom: 1rem;

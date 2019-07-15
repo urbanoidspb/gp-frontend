@@ -6,6 +6,8 @@
       <Navbar id="Navbar"/>
     </no-ssr>
 
+    <up v-if="(this.NewsOnPage > 6)"/>
+
     <section class="news">
         <h2 class="title">Новости</h2>
         <main>
@@ -42,6 +44,7 @@
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
 import News from '~/components/News.vue'
+import up from '~/components/up.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
@@ -49,6 +52,7 @@ export default {
     Contacts,
     Navbar,
     News,
+    up,
     Footer
   },
 
@@ -70,6 +74,7 @@ export default {
 <style>
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 .wrapper {
   display: grid;

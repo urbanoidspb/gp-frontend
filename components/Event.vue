@@ -146,6 +146,7 @@ export default {
     .information .event_name {
         width: 100%;
         text-align: center;
+        text-decoration: none;
         font-size: 2rem;
         font-weight: 500;
         color: #323232;

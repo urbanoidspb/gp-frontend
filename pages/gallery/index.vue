@@ -6,6 +6,8 @@
       <Navbar id="Navbar"/>
     </no-ssr>
 
+    <up v-if="(this.galleriesOnPage > 6)"/>
+
     <section class="gallery">
         <h2 class="title">Галерея</h2>
         <main>
@@ -45,6 +47,7 @@
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
 import Gallery from '~/components/Gallery.vue'
+import up from '~/components/up.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
@@ -52,6 +55,7 @@ export default {
     Contacts,
     Navbar,
     Gallery,
+    up,
     Footer
   },
   data() {
@@ -81,6 +85,7 @@ export default {
 <style>
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 .wrapper {
   display: grid;
@@ -109,8 +114,7 @@ html {
 .main_item > h2 {
     margin-top: 0.5rem;
     font-size: 1.4rem;
-    font-weight: 500;
-    text-decoration: underline;    
+    font-weight: 500;    
 }
 
 .gallery .showall {

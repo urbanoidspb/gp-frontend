@@ -6,6 +6,8 @@
       <Navbar id="Navbar"/>
     </no-ssr>
 
+    <up v-if="(this.PhotosOnPage > 6)"/>
+
     <section class="gallery_id">
         <h2 class="title">Санкт-Петербург</h2>
         <main>
@@ -42,6 +44,7 @@
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
 import Gallery from '~/components/Gallery.vue'
+import up from '~/components/up.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
@@ -49,6 +52,7 @@ export default {
     Contacts,
     Navbar,
     Gallery,
+    up,
     Footer
   },
   data() {
@@ -81,7 +85,9 @@ export default {
 <style>
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr repeat(12, 1fr) 1fr;
@@ -125,6 +131,7 @@ html {
     color: #023C71;
     font-weight: 500;
     outline: none;
+    cursor: pointer;
 }
 
 .background {
