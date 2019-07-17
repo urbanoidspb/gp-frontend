@@ -78,11 +78,11 @@ export default {
 <style scoped>
 
 .сomeIn {
-  padding: 1.5rem 2rem;
- height: 5rem;
+  font-size: 1.7rem;
+    padding: 1rem 1.7rem;
+    height: 3.7rem;
         width: 100%;
         border: none;
-        font-size: 2rem;
         border-radius: 30px;
         font-family: 'Rubik', sans-serif;
         outline: none;
@@ -240,9 +240,17 @@ input[type=tel] {
 
 @media (min-width: 1450px) {
    .сomeIn {
-    font-size: 2rem;
-    padding: 1.3rem 2rem;
-    height: 4.6rem;
+    font-size: 1.7rem;
+    padding: 1rem 1.7rem;
+    height: 3.7rem;
+  }
+}
+
+@media (max-width: 580px) {
+   .сomeIn {
+    font-size: 1.75rem;
+    padding: 1.1rem 1.7rem;
+    height: 3.95rem;
   }
 }
 
@@ -252,16 +260,17 @@ input[type=tel] {
    padding: 4vw;
   }
    .сomeIn {
-    padding: 1.3rem 2rem;
-    height: 4.6rem;
+    font-size: 1.75rem;
+    padding: 0.90rem 1.7rem;
+    height: 3.55rem;
   }
 }
 
 @media (max-width: 420px) {
    .сomeIn {
     font-size: 1.7rem;
-    padding: 1.1rem 1rem;
-    height: 3.9rem;
+    padding: 1rem 1.7rem;
+    height: 3.7rem;
   }
 }
 

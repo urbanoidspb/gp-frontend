@@ -32,7 +32,7 @@ export default {
     },
     computed: {
         title() {
-            return this.eventTitle.slice(0,40) + this.ellipsis
+            return this.eventTitle.slice(0,35) + this.ellipsis
         },
         backgroundImageStyle() {
             if (this.eventPhoto) {
@@ -61,7 +61,7 @@ export default {
         },
         ellipsis() {
             var el;
-           return (this.eventTitle.length > 40) ? el = "..." : el = '';
+           return (this.eventTitle.length > 35) ? el = "..." : el = '';
         }
     },
 }
@@ -71,7 +71,7 @@ export default {
     .card {
         padding: 0;
         width: 100%;
-        height: 35vw;
+        height: 27vw;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
@@ -108,7 +108,7 @@ export default {
     .status {
         display: inline-block;
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 0.9rem;
         padding: 0;margin: 0;
         color: #4AE0B3;
         background: rgba(255, 255, 255, 0.9);
@@ -147,13 +147,13 @@ export default {
         width: 100%;
         text-align: center;
         text-decoration: none;
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 500;
         color: #323232;
     }
 
     .information .event_date {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         color: black;
     }
 

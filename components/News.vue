@@ -50,7 +50,7 @@ export default {
         justify-content: flex-end;
         padding: 0;
         width: 100%;
-        height: 17vw;
+        height: 13vw;
         border-radius: 15px;
         font-family: 'Rubik', sans-serif;
         color: white;

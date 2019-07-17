@@ -34,7 +34,7 @@
           <router-link to="/events">Все мероприятия</router-link>
         </header>
         <main>
-          <Event class="event_block" v-for="event in events.slice(0, 3)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
+          <Event class="event_block" v-for="event in events.slice(0, 4)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
         </main>
     </section>
 
@@ -44,7 +44,7 @@
           <router-link to="/news">Все новости</router-link>
         </header>
         <main>
-          <News class="news_block" v-for="NewsItem in news.slice(0, 3)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
+          <News class="news_block" v-for="NewsItem in news.slice(0, 4)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
         </main>
     </section>
     </div>
@@ -126,7 +126,7 @@ html {
 }
 
 .joinUs > img {
-  width: 100%;
+  width: 70%;
   margin: -3rem 0;
   z-index: -1;
 }
@@ -138,22 +138,6 @@ html {
 .joinUs h2 {
   font-weight: 500;
   
-}
-
-.joinUs .SignInButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  font-size: 2.5rem;
-  background: #71D5A2;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 100px;
-  text-decoration: none;
-  color: white;
-  outline: none;
-  cursor: pointer;
 }
 
 .Particip {
@@ -170,7 +154,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1vw;
-  margin: 5vw 0;
+  margin: 3.5vw 0;
 }
 
 .home_step {
@@ -180,11 +164,11 @@ html {
 }
 
 .home_step img {
-  width: 70%;
+  width: 50%;
 }
 
 .home_step h3 {
-  font-size: 2rem;
+  font-size: 1.8em;
   padding: 2rem 0;
   font-weight: normal;
   text-align: center;
@@ -222,7 +206,7 @@ html {
 .home_events main,
 .home_news main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
   margin: 2vw 0;
 }
@@ -344,7 +328,9 @@ html {
     padding-bottom: 8rem;
   }
   .event_block:last-child,
-.news_block:last-child {
+.news_block:last-child,
+ .event_block:nth-child(3),
+.news_block:nth-child(3){
   display: none !important;
 }
   .home_events main,
@@ -357,7 +343,7 @@ html {
     margin: 10vw 0;
   }
   .joinUs > img {
-  margin: -1rem 0;
+  margin: 2rem 0 -1rem;
   }
   .joinUs p {
     font-size: 1rem;

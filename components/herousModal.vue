@@ -257,6 +257,21 @@ input[type=tel] {
    .сomeIn {
     font-size: 1.7rem;
   }
+  .takeHero {
+  width: 100%;
+  font-weight: bold;
+  font-size: 3rem;
+  background: #71D5A2;
+  padding: 2.5rem 6rem;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 5rem;
+  cursor: pointer;
+  height: 8rem;
+  outline: none;
+}
 }
 
 .modal-enter {
@@ -273,19 +288,5 @@ input[type=tel] {
   transform: scale(1.1);
 }
 
-.takeHero {
-  width: 100%;
-  font-weight: bold;
-  font-size: 3rem;
-  background: #71D5A2;
-  padding: 2.5rem 6rem;
-  border: none;
-  border-radius: 100px;
-  text-decoration: none;
-  color: white;
-  margin-bottom: 5rem;
-  cursor: pointer;
-  height: 8rem;
-  outline: none;
-}
+
 </style>

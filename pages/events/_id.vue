@@ -23,7 +23,7 @@
                 <h3>Мероприятия</h3>
             </header>
             <main>
-                <Event v-for="event in events.slice(0, 3)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
+                <Event class="event_block" v-for="event in events.slice(0, 4)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
             </main>
         </section>
     </section>
@@ -155,7 +155,7 @@ article #Modal {
 
 .another_events main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
   margin: 3vw 0 3vw;
 }
@@ -296,6 +296,11 @@ article #Modal {
   #Navbar {
     margin-bottom: 5vw;
   }
+
+  .event_block:last-child,
+ .event_block:nth-child(3){
+  display: none !important;
+}
 }
 
 @media (max-width: 360px) {

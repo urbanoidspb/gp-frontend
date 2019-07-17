@@ -6,7 +6,7 @@
       <Navbar id="Navbar"/>
     </no-ssr>
 
-    <up v-if="(this.NewsOnPage > 6)"/>
+    <up v-if="(this.NewsOnPage > 8)"/>
 
     <section class="news">
         <h2 class="title">Новости</h2>
@@ -14,7 +14,7 @@
           <News v-for="NewsItem in news.slice(0, this.NewsOnPage)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
         </main>
         <div class="showallRow">
-            <button v-on:click="NewsOnPage += 6" v-if="!(this.NewsOnPage >= news.length)" class="showall" to="/about">Показать ещё</button>
+            <button v-on:click="NewsOnPage += 8" v-if="!(this.NewsOnPage >= news.length)" class="showall" to="/about">Показать ещё</button>
         </div>
     </section>
     </div>
@@ -58,7 +58,7 @@ export default {
 
   data() {
     return {
-         NewsOnPage: 6
+         NewsOnPage: 8
     }
   },
 
@@ -95,9 +95,13 @@ html {
 .news main,
 .showallRow {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
   margin: 5vw 0;
+}
+
+.showallRow {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .news .showall {

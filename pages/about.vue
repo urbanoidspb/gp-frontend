@@ -232,7 +232,7 @@ html {
 }
 
 .avatar {
-    width: 80%;
+    width: 60%;
     border-radius: 50%;
     border: 1px solid #71D5A2;
 }

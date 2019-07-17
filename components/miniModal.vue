@@ -197,16 +197,10 @@ input[type=tel] {
 }
 
 @media (max-width: 850px) {
-  .сomeIn {
-    font-size: 1.4rem;
-  }
+
 }
 
 @media (max-width: 576px) {
-
-  .сomeIn {
-    font-size: 1.3rem;
-  }
 
   label {
     font-size: 2rem;
@@ -245,9 +239,6 @@ input[type=tel] {
 }
 
 @media (max-width: 480px) {
-  .сomeIn {
-    font-size: 1.2rem;
-  }
   .modal-container {
   width: 60vw;
    padding: 4vw;
@@ -255,9 +246,6 @@ input[type=tel] {
 }
 
 @media (max-width: 420px) {
-   .сomeIn {
-    font-size: 1.7rem;
-  }
 }
 
 .modal-enter {
@@ -277,16 +265,16 @@ input[type=tel] {
 .takePart {
   width: 100%;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 2.2rem;
   background: #71D5A2;
-  padding: 2.5rem 6rem;
+  padding: 2rem 3rem;
   border: none;
   border-radius: 100px;
   text-decoration: none;
   color: white;
   margin-bottom: 0.5rem;
   cursor: pointer;
-  height: 8rem;
+  height: 6.2rem;
   outline: none;
 }
 </style>

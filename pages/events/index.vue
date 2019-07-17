@@ -6,7 +6,7 @@
       <Navbar id="Navbar"/>
     </no-ssr>
 
-    <up v-if="(this.eventsOnPage > 6)"/>
+    <up v-if="(this.eventsOnPage > 8)"/>
 
     <section class="events">
         <h2 class="title">Мероприятия</h2>
@@ -14,7 +14,7 @@
           <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]" v-bind:event-participants="event.participants"/>
         </main>
         <div class="showallRow">
-            <button v-on:click="eventsOnPage += 6" v-if="!(this.eventsOnPage >= events.length)" class="showall" to="/about">Показать ещё</button>
+            <button v-on:click="eventsOnPage += 8" v-if="!(this.eventsOnPage >= events.length)" class="showall" to="/about">Показать ещё</button>
         </div>
     </section>
   </div>
@@ -59,7 +59,7 @@ export default {
 
   data() {
     return {
-         eventsOnPage: 6
+         eventsOnPage: 8
     }
   },
 
@@ -98,9 +98,13 @@ html {
 .events main,
 .showallRow {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
   margin: 5vw 0;
+}
+
+.showallRow {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .events .showall {

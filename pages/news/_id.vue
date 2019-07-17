@@ -19,7 +19,7 @@
                 <h3>Другие новости</h3>
             </header>
             <main>
-                <News v-for="NewsItem in news.slice(0, 3)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
+                <News class="news_block" v-for="NewsItem in news.slice(0, 4)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
             </main>
         </section>
     </section>
@@ -125,7 +125,7 @@ html {
 
 .another_news main {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
   margin: 3vw 0 3vw;
 }
@@ -250,6 +250,10 @@ html {
   #Navbar {
     margin-bottom: 5vw;
   }
+.news_block:last-child,
+.news_block:nth-child(3){
+  display: none !important;
+}
 }
 
 @media (max-width: 360px) {
