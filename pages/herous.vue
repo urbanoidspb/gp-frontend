@@ -13,7 +13,7 @@
             <p>
                 Героев нужно не только знать в лицо, но и награждать, за труд! Мы придумали, как сделать жизнь активистов интереснее и удобнее, а главное наглядно представить все их заслуги.
             </p>
-            <herousModal class="Particip"/>
+            <a href="#" class="toHerous">Скоро</a>
         </div>
         <img src="~/assets/macbook.png" alt="">
     </section>
@@ -38,7 +38,7 @@
         </div>
         <div class="feature">
             <img src="~/assets/dependable.png" alt="">
-            <h2>Покажите всем кто самый<br> круто герой !</h2>
+            <h2>Покажите всем, кто самый<br> крутой герой !</h2>
         </div>
     </section>
 
@@ -118,7 +118,6 @@
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
 import Event from '~/components/Event.vue'
-import herousModal from '~/components/herousModal.vue'
 import Footer from '~/components/Footer.vue'
 
 export default {
@@ -126,7 +125,6 @@ export default {
     Contacts,
     Navbar,
     Event,
-    herousModal,
     Footer
   }
 }
@@ -159,21 +157,49 @@ img {
     font-weight: 500;
 }
 
+.toHerous {
+    display: inline;
+    font-weight: bold;
+    font-size: 2rem;
+    background: #fff;
+    border: 2px solid #71D5A2;
+    padding: 1rem 2.5rem;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #71D5A2;
+    cursor: pointer;
+    height: 5rem;
+    outline: none;
+    margin: 2rem 0;
+}
+
+@media (max-width: 420px) {
+  .takeHero {
+  width: 100%;
+  font-weight: bold;
+  font-size: 3rem;
+  background: #71D5A2;
+  padding: 2.5rem 6rem;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  color: white;
+  margin-bottom: 5rem;
+  cursor: pointer;
+  height: 8rem;
+  outline: none;
+}
+}
+
 .herous_sign_in {
     display: grid;
     grid-template-columns: 2fr 3fr;
 }
 
-.herous_sign_in .sign_in_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
 .herous_sign_in p {
 font-size: 1.6rem;
 line-height: 2.25rem;
-margin-right: 3rem;
+margin: 3rem 3rem 3rem 0;
 }
 
 .herous_sign_in img {
@@ -296,6 +322,11 @@ margin-right: 3rem;
 
 .hero_info_column h2 {
     margin-bottom: 3rem;
+}
+
+.hero_info_column p {
+    font-size: 1.6rem;
+    line-height: 2.25rem;
 }
 
 .hero_assets_column {
