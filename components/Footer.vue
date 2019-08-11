@@ -17,13 +17,12 @@
             <nav class="contacts_item contacts_item_down">
                 <p>Контактная информация:</p>
                 <a href="tel:+79822312466">+7(982)-231-24-66</a>
-                <a href="mailto:press@gorodperemen.spb.ru">press@gorodperemen.spb.ru</a>
+                <a href="mailto:gorodperemenspb@gmail.com">gorodperemenspb@gmail.com</a>
             </nav>
         </section>
         <section class="footer_item poweredby">
             <img class="logo" src="~/assets/footer_logo.png" alt="">
             <p>© 2019 Петербург - город перемен</p>
-            <p>powered by <span style="font-weight: 500"><a target="_blank" href="https://bonch.dev">Bonch.dev</a></span></p>
         </section>
     </footer>
 </template>
