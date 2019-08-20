@@ -33,7 +33,7 @@ export default {
         display: none;
     }
 
-    .mobile .mobile-show {
+    .mobile-show {
         display: flex;
     }
 
