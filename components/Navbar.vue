@@ -1,9 +1,11 @@
 <template>
     <nav>
         <router-link to="/"><img class="logo" src="~/assets/logo.png" alt=""></router-link>
-        <button class="burger_btn"><img class="burger" @click="show = !show" key="openburger" src="~/assets/burger.png" alt=""></button>
+        <button class="burger_btn">
+            <img class="burger" @click="show = !show" key="openburger" src="~/assets/burger.png" alt="">
+        </button>
         <transition name="fade">
-            <ul v-if="show||showMenu()">
+            <ul v-if="show || showMenu()">
                 <li><router-link to="/about" active-class="active">О нас</router-link></li>
                 <li><router-link to="/changes" active-class="active">Плафторма перемен</router-link></li>
                 <li><router-link to="/events" active-class="active">Мероприятия</router-link></li>
@@ -21,12 +23,6 @@ export default {
     data() {
         return {
             show: false,
-            width: window.innerWidth 
-        }
-    },
-    methods: {
-        showMenu() {
-            return (this.width > 759);
         }
     },
 }
@@ -81,12 +77,12 @@ export default {
     }
 
     @media (min-width: 765px) {
-         li:last-child > a {
-        color: #fff;
-        padding: 0.5rem 1.5rem;
-        background: #0C6293;
-        border: 1px solid #0C6293;
-        border-radius: 30px;
+        li:last-child > a {
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            background: #0C6293;
+            border: 1px solid #0C6293;
+            border-radius: 30px;
         }
     }
 
@@ -104,8 +100,7 @@ export default {
 
 
     @media (max-width: 765px) {
-        nav,
-        ul {
+        nav, ul {
             flex-direction: column;
             align-items: flex-start;
             z-index: 1000;
@@ -118,8 +113,8 @@ export default {
         }
 
         nav {
-        height: 6vw;
-    }
+            height: 6vw;
+        }
 
         ul {
             width: 110%;
@@ -143,7 +138,7 @@ export default {
         .burger_btn {
             margin-top: 1.4vw;
             align-self: flex-end;
-            display: initial;
+            display: flex;
             position: absolute;
             cursor: pointer;
             width: 2rem;
@@ -155,7 +150,6 @@ export default {
         .burger_btn {
             margin-top: 1vw;
         }
-        
     }
 
     @media (max-width: 560px) {
@@ -171,9 +165,8 @@ export default {
         }
 
         nav {
-        height: 6vw;
-    }
-
+            height: 6vw;
+        }
 
         .burger_btn {
             margin-top: 5vw;
