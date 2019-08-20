@@ -34,7 +34,7 @@ export default {
     }
 
     .mobile-show {
-        display: flex;
+        display: flex !important;
     }
 
     nav {
