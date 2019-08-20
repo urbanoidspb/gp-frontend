@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const HTTPS = axios.create({
-    baseURL: 'https://peremen.live/api',
+    baseURL: '//api',
 });
 
 export default HTTPS
