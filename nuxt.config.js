@@ -1,4 +1,4 @@
-import HTTPS from "~/modules/https";
+import HTTPS from "./modules/https/";
 
 const events = HTTPS.get('/events')
 .then(res => res.data.map(event => '/events/' + event.id));
@@ -59,5 +59,5 @@ module.exports = {
       }
     }
   },
-}
+};
 
