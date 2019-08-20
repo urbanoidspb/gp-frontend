@@ -5,7 +5,7 @@
             <img class="burger" @click="show = !show" key="openburger" src="~/assets/burger.png" alt="">
         </button>
         <transition name="fade">
-            <ul v-if="show || showMenu()">
+            <ul class="mobile" :class="{'mobile-show': show}">
                 <li><router-link to="/about" active-class="active">О нас</router-link></li>
                 <li><router-link to="/changes" active-class="active">Плафторма перемен</router-link></li>
                 <li><router-link to="/events" active-class="active">Мероприятия</router-link></li>
@@ -22,13 +22,21 @@ export default {
     name: 'Navbar',
     data() {
         return {
-            show: false,
+            show: false
         }
     },
 }
 </script>
 
 <style scoped>
+    .mobile {
+        display: none;
+    }
+
+    .mobile .mobile-show {
+        display: flex;
+    }
+
     nav {
         display: flex;
         height: 4vw;
@@ -77,6 +85,10 @@ export default {
     }
 
     @media (min-width: 765px) {
+        .mobile {
+            display: flex;
+        }
+
         li:last-child > a {
             color: #fff;
             padding: 0.5rem 1.5rem;
@@ -100,6 +112,7 @@ export default {
 
 
     @media (max-width: 765px) {
+
         nav, ul {
             flex-direction: column;
             align-items: flex-start;
