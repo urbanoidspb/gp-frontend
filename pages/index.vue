@@ -34,7 +34,9 @@
           <router-link to="/events">Все мероприятия</router-link>
         </header>
         <main>
-          <Event class="event_block" v-for="event in events.slice(0, 4)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
+          <client-only>
+            <Event class="event_block" v-for="event in events.slice(0, 4)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
+          </client-only>
         </main>
     </section>
 
@@ -44,7 +46,9 @@
           <router-link to="/news">Все новости</router-link>
         </header>
         <main>
-          <News class="news_block" v-for="NewsItem in news.slice(0, 4)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
+          <client-only>
+            <News class="news_block" v-for="NewsItem in news.slice(0, 4)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
+          </client-only>
         </main>
     </section>
     </div>

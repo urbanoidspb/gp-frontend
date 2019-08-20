@@ -11,7 +11,9 @@
         <h2 class="title">Галерея</h2>
         <main>
             <div class="main_item"  v-for="gallery in galleries.slice(0, this.galleriesOnPage)" v-bind:key="gallery.id" >
-                <Gallery v-bind:gallery-id="gallery.id" v-bind:gallery-photos="gallery.photos" v-bind:gallery-time="gallery.time"/>
+                <client-only>
+                    <Gallery v-bind:gallery-id="gallery.id" v-bind:gallery-photos="gallery.photos" v-bind:gallery-time="gallery.time"/>
+                </client-only>
                 <h2 class="name">{{funcTitle(gallery.title)}}</h2>
             </div>
         </main>

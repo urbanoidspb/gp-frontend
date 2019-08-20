@@ -10,7 +10,9 @@
     <section class="events">
         <h2 class="title">Мероприятия</h2>
         <main>
-          <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]" v-bind:event-participants="event.participants"/>
+            <client-only>
+                <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]" v-bind:event-participants="event.participants"/>
+            </client-only>
         </main>
         <div class="showallRow">
             <button v-on:click="eventsOnPage += 8" v-if="!(this.eventsOnPage >= events.length)" class="showall" to="/about">Показать ещё</button>

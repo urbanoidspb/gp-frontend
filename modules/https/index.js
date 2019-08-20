@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const HTTPS = axios.create({
-    baseURL: '//api',
+    baseURL: '/api',
 });
 
 export default HTTPS

@@ -1,14 +1,3 @@
-import HTTPS from "./modules/https/";
-
-const events = HTTPS.get('/events')
-.then(res => res.data.map(event => '/events/' + event.id));
-
-const news = HTTPS.get('/news')
-.then(res => res.data.map(newsitem => '/news/' + newsitem.id));
-
-const albums = HTTPS.get('/albums')
-.then(res => res.data.map(album => '/gallery/' + album.id));
-
 export default {
   mode: 'universal',
   ssr: true,
@@ -33,11 +22,11 @@ export default {
   ],
   sitemap: {
     gzip: true,
-    routes () {
-      return Promise.all([events, news, albums]).then(function (ally) {
-        return ally[0].concat(ally[1].concat(ally[2]))
-      });
-    }
+    //routes () {
+    //  return Promise.all([events, news, albums]).then(function (ally) {
+    //    return ally[0].concat(ally[1].concat(ally[2]))
+    //  });
+    //}
   },
   /*
   ** Customize the progress bar color

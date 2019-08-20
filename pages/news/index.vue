@@ -9,7 +9,9 @@
     <section class="news">
         <h2 class="title">Новости</h2>
         <main>
-          <News v-for="NewsItem in news.slice(0, this.NewsOnPage)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
+            <client-only>
+                <News v-for="NewsItem in news.slice(0, this.NewsOnPage)" v-bind:key="NewsItem.id" v-bind:news-item-id="NewsItem.id" v-bind:news-item-title="NewsItem.title" v-bind:news-item-date="NewsItem.created_at" v-bind:news-item-photo="NewsItem.photos[0]"/>
+            </client-only>
         </main>
         <div class="showallRow">
             <button v-on:click="NewsOnPage += 8" v-if="!(this.NewsOnPage >= news.length)" class="showall" to="/about">Показать ещё</button>
