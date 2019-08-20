@@ -2,9 +2,8 @@
 <div>
   <Contacts/>
   <div class="wrapper">
-    <no-ssr>
-      <Navbar id="Navbar"/>
-    </no-ssr>
+    <Navbar id="Navbar"/>
+
 
     <h2 class="title">Платформа перемен</h2>
 

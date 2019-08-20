@@ -9,7 +9,7 @@ const news = HTTPS.get('/news')
 const albums = HTTPS.get('/albums')
 .then(res => res.data.map(album => '/gallery/' + album.id));
 
-module.exports = {
+export default {
   mode: 'universal',
   ssr: true,
   /*

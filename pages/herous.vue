@@ -2,9 +2,8 @@
 <div>
   <Contacts/>
   <div class="wrapper">
-    <no-ssr>
       <Navbar id="Navbar"/>
-    </no-ssr>
+
 
     <h2 class="title">Город героев</h2>
 
@@ -42,7 +41,7 @@
         </div>
     </section>
 
-    <section class="hero_events hero_info_block"> 
+    <section class="hero_events hero_info_block">
         <div class="hero_info_column">
             <h2>Мероприятия</h2>
              <p>Посещая мероприятия города перемен, ты получаешь опыт и внутриигровую валюту, за считывание индивидуального QR- кода каждого мероприятия. Внутриигровую валюту можно потратить на мерч Города Перемен, скидки у партнеров и полезные призы</p>
@@ -53,7 +52,7 @@
         </div>
     </section>
 
-    <section class="hero_rating hero_info_block"> 
+    <section class="hero_rating hero_info_block">
         <div class="hero_assets_column">
             <img src="~/assets/rate1.png" alt="">
             <img src="~/assets/rate2.png" alt="">
@@ -67,7 +66,7 @@
         </div>
     </section>
 
-    <section class="hero_friends hero_info_block"> 
+    <section class="hero_friends hero_info_block">
         <div class="hero_info_column">
             <h2>Друзья</h2>
              <p>Добавляй друзей, используя реферальный код друга, и получай дополнительные очки. Как только у тебя появляются друзья в системе, вы можете следить за успехами друг друга.</p>
@@ -78,7 +77,7 @@
         </div>
     </section>
 
-    <section class="hero_rating hero_rating_2 hero_info_block"> 
+    <section class="hero_rating hero_rating_2 hero_info_block">
         <div class="hero_assets_column">
             <img src="~/assets/rate_card1.png" alt="">
             <img src="~/assets/rate_card2.png" alt="">

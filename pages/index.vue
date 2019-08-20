@@ -2,9 +2,9 @@
 <div>
   <Contacts/>
   <div class="wrapper">
-    <no-ssr>
-      <Navbar id="Navbar"/>
-    </no-ssr>
+
+    <Navbar id="Navbar"/>
+
     <section class="joinUs">
       <img src="~/assets/main_background.png" alt="">
       <h2>Проектная площадка</h2>

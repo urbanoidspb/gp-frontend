@@ -2,9 +2,7 @@
 <div>
   <Contacts/>
   <div class="wrapper">
-    <no-ssr>
       <Navbar id="Navbar"/>
-    </no-ssr>
 
     <section class="events">
         <h2 class="title">{{Event.title}}</h2>
