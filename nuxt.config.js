@@ -1,12 +1,13 @@
-const axios = require('axios')
+import 'modules/https'
+import HTTPS from "./modules/https";
 
-const events = axios.get('https://peremen.live/api/events')
+const events = HTTPS.get('/events')
 .then(res => res.data.map(event => '/events/' + event.id));
 
-const news = axios.get('https://peremen.live/api/news')
+const news = HTTPS.get('/news')
 .then(res => res.data.map(newsitem => '/news/' + newsitem.id));
 
-const albums = axios.get('https://peremen.live/api/albums')
+const albums = HTTPS.get('/albums')
 .then(res => res.data.map(album => '/gallery/' + album.id));
 
 module.exports = {
@@ -30,7 +31,6 @@ module.exports = {
     '@nuxtjs/sitemap'
   ],
   sitemap: {
-    hostname: 'https://peremen.live',
     gzip: true,
     routes () {
       return Promise.all([events, news, albums]).then(function (ally) {
