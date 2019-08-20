@@ -10,6 +10,8 @@ const albums = HTTPS.get('/albums')
 .then(res => res.data.map(album => '/gallery/' + album.id));
 
 module.exports = {
+  mode: 'universal',
+  ssr: true,
   /*
   ** Headers of the page
   */
