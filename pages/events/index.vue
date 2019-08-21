@@ -1,73 +1,75 @@
 <template>
-<div>
+  <div>
     <up v-if="(this.eventsOnPage > 8)"/>
     <section class="events">
-        <h2 class="title">Мероприятия</h2>
-        <main>
-            <client-only>
-                <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]" v-bind:event-participants="event.participants"/>
-            </client-only>
-        </main>
-        <div class="showallRow">
-            <button v-on:click="eventsOnPage += 8" v-if="!(this.eventsOnPage >= events.length)" class="showall" to="/about">Показать ещё</button>
-        </div>
+      <h2 class="title">Мероприятия</h2>
+      <main>
+        <Event v-for="event in events.slice(0, this.eventsOnPage)" v-bind:key="event.id" v-bind:event-id="event.id"
+               v-bind:event-title="event.title" v-bind:event-time="event.time" v-bind:event-status="event.is_relevant"
+               v-bind:event-photo="event.photos[0]" v-bind:event-participants="event.participants"/>
+      </main>
+      <div class="showallRow">
+        <button v-on:click="eventsOnPage += 8" v-if="!(this.eventsOnPage >= events.length)" class="showall" to="/about">
+          Показать ещё
+        </button>
+      </div>
     </section>
-</div>
+  </div>
 </template>
 
 <script>
-import Contacts from '~/components/Contacts.vue'
-import Navbar from '~/components/Navbar.vue'
-import Event from '~/components/Event.vue'
-import up from '~/components/up.vue'
-import Footer from '~/components/Footer.vue'
+  import Contacts from '~/components/Contacts.vue'
+  import Navbar from '~/components/Navbar.vue'
+  import Event from '~/components/Event.vue'
+  import up from '~/components/up.vue'
+  import Footer from '~/components/Footer.vue'
 
-export default {
-  components: {
-    Contacts,
-    Navbar,
-    Event,
-    up,
-    Footer
-  },
+  export default {
+    components: {
+      Contacts,
+      Navbar,
+      Event,
+      up,
+      Footer
+    },
 
-  data() {
-    return {
-         eventsOnPage: 8
-    }
-  },
+    data() {
+      return {
+        eventsOnPage: 8
+      }
+    },
 
-  async asyncData ({store}) {
-    await store.dispatch('actSetEvents');
+    async asyncData({store}) {
+      await store.dispatch('actSetEvents');
       return {
         events: store.getters.getEvents
+      }
     }
-  }
 
-}
+  }
 </script>
 
 <style>
-.events .title {
+  .events .title {
     text-align: center;
     font-size: 3rem;
     margin-top: 4rem;
     font-weight: bold;
-}
+  }
 
-.events main,
-.showallRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 2vw;
-  margin: 5vw 0;
-}
+  .events main,
+  .showallRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 2vw;
+    margin: 5vw 0;
+  }
 
-.showallRow {
-  grid-template-columns: 1fr 1fr 1fr;
-}
+  .showallRow {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-.events .showall {
+  .events .showall {
     grid-column: 2/3;
     display: flex;
     justify-content: center;
@@ -83,13 +85,13 @@ export default {
     font-weight: 500;
     outline: none;
     cursor: pointer;
-}
+  }
 
-@media (max-width: 420px) {
-  .events main {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 4vw;
-    margin: 10vw 0;
-  }  
-}
+  @media (max-width: 420px) {
+    .events main {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 4vw;
+      margin: 10vw 0;
+    }
+  }
 </style>
