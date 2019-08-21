@@ -113,6 +113,20 @@ export default {
 </script>
 
 <style>
+* {
+    grid-column: 2/14;
+}
+p {
+    grid-column: 4/12;
+    margin: 2rem;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+}
+img {
+    width: 100%;
+    grid-column: 2/14;
+}
+
 .title {
     text-align: center;
     font-size: 3rem;
