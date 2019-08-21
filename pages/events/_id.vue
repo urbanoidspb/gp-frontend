@@ -61,10 +61,6 @@ export default {
 </script>
 
 <style>
-html {
-  font-size: 16px;
-}
-
 .events .title {
     text-align: center;
     font-size: 3rem;
