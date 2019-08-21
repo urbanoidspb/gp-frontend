@@ -255,6 +255,10 @@ export default {
 }
 
 @media (max-width: 576px) {
+  p {
+    grid-column: 3/13;
+  }
+
   .leads main {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -274,6 +278,12 @@ export default {
 }
 
 @media (max-width: 420px) {
+  p {
+    grid-column: 2/14;
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+
   .section_name {
       font-size: 3rem;
   }

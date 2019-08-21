@@ -5,7 +5,7 @@
         <article>
             <img :src="photoSrc(NewsItem.photos)" alt="">
             <p>
-                {{NewsItem.text}}
+                {{ NewsItem.text }}
             </p>
         </article>
         <section class="another_news">
