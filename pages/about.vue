@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="wrapper">
     <h2 class="title">O нас</h2>
 
     <img class="y_logo" src="~/assets/y_logo.png" alt="">
@@ -113,16 +113,16 @@ export default {
 </script>
 
 <style>
-* {
+.wrapper > * {
     grid-column: 2/14;
 }
-p {
+.wrapper > p {
     grid-column: 4/12;
     margin: 2rem;
     font-size: 1.5rem;
     line-height: 2.5rem;
 }
-img {
+.wrapper > img {
     width: 100%;
     grid-column: 2/14;
 }
@@ -269,7 +269,7 @@ img {
 }
 
 @media (max-width: 576px) {
-  p {
+  .wrapper > p {
     grid-column: 3/13;
   }
 
@@ -292,7 +292,7 @@ img {
 }
 
 @media (max-width: 420px) {
-  p {
+  .wrapper > p {
     grid-column: 2/14;
     font-size: 2rem;
     line-height: 4rem;
