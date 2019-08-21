@@ -1,9 +1,5 @@
 <template>
 <div>
-  <Contacts/>
-  <div class="wrapper">
-    <Navbar id="Navbar"/>
-
     <h2 class="title">O нас</h2>
 
     <img class="y_logo" src="~/assets/y_logo.png" alt="">
@@ -97,27 +93,7 @@
             <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abb380dd4a1d540e0392435f9438aa6fce3e42ee01a9a47f429aa150a0c04b920&amp;width=100%&amp;height=40vw&amp;lang=ru_RU&amp;scroll=true"></script>
         </div>
     </section>
-    </div>
-    <div class="stand_background">
-        <Footer id="Footer"/>
-    </div>
-
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(53837686, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/53837686" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-  </div>
+</div>
 </template>
 
 <script>
@@ -137,40 +113,11 @@ export default {
 </script>
 
 <style>
-html {
-  font-size: 16px;
-}
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
-  font-family: 'Rubik', sans-serif;
-}
-
-.wrapper > * {
-  grid-column: 2/14;
-}
-
-.wrapper > p {
-  grid-column: 4/12;
-  margin: 2rem;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-}
-
-.wrapper > img {
-    width: 100%;
-    grid-column: 2/14;
-}
-
 .title {
     text-align: center;
     font-size: 3rem;
     margin: 4rem 0 1rem;
     font-weight: 500;
-}
-
-.wrapper > .y_logo {
-    grid-column: 7/9;
 }
 
 .section_name {
@@ -288,122 +235,26 @@ html {
     grid-column: 5/13;
 }
 
-.map {
-    width: 100%;
-}
-
-.stand_background {
-  width: 100%;
-  background: #0C6293;
-  grid-column: 1/15;
-  display: grid;
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
-}
-
-#Footer {
-  grid-column: 2/14;
-}
-
-@media (min-width: 1920px) {
-  html {
-  font-size: 16px;
-  }
-}
-
-@media (max-width: 1675px) {
-  html {
-  font-size: 15px;
-  }
-}
-
-@media (max-width: 1575px) {
-  html {
-  font-size: 14px;
-  }
-}
-
-@media (max-width: 1475px) {
-  html {
-  font-size: 13px;
-  }
-}
-
-@media (max-width: 1375px) {
-  html {
-  font-size: 12px;
-  }
-}
-
-@media (max-width: 1275px) {
-  html {
-  font-size: 11px;
-  }
-}
-
-@media (max-width: 1175px) {
-  html {
-  font-size: 10px;
-  }
-}
-
-@media (max-width: 1075px) {
-  html {
-  font-size: 9px;
-  }
-}
-
-@media (max-width: 975px) {
-  html {
-  font-size: 8px;
-  }
-
-}
-
-@media (max-width: 885px) {
-  html {
-  font-size: 7px;
-  }
-}
-
-@media (max-width: 775px) {
-  html {
-  font-size: 6px;
-  }
-}
-
 @media (max-width: 700px) {
   .contacts_map .left_column {
     grid-column: 1/13;
     font-size: 1.5rem;
   }
-  #Navbar {
-    margin-bottom: 2vw;
-  }
 
   .contacts_map .right_column {
     grid-column: 1/13;
-}
- .contact {
-    margin-bottom: 2vw;
-}
-.projects {
-    grid-column: 2/14;
-}
-}
+  }
 
-@media (max-width: 650px) {
-  html {
-  font-size: 5px;
+  .contact {
+    margin-bottom: 2vw;
+  }
+
+  .projects {
+    grid-column: 2/14;
   }
 }
 
 @media (max-width: 576px) {
-  html {
-  font-size: 4px;
-  }
-  .wrapper > p {
-    grid-column: 3/13;
-  }
   .leads main {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
@@ -423,18 +274,6 @@ html {
 }
 
 @media (max-width: 420px) {
-  html {
-  font-size: 6px;
-  }
-  .wrapper {
-  grid-template-columns: 0.5fr repeat(12, 1fr) 0.5fr;
-}
-  .wrapper > p {
-    grid-column: 2/14;
-    font-size: 2rem;
-    line-height: 4rem;
-  }
-
   .section_name {
       font-size: 3rem;
   }
@@ -452,8 +291,8 @@ html {
     font-size: 2rem;
   }
 
-.project:nth-child(1),
-.project:nth-child(3) {
+  .project:nth-child(1),
+  .project:nth-child(3) {
     background: #5EB8D3;
     color: white;
     padding: 3rem;
@@ -471,7 +310,7 @@ html {
     display: flex;
     align-items: center;
     margin-bottom: 5vw;
-}
+  }
 
   .left_column {
     grid-column: 1/13;
@@ -481,13 +320,5 @@ html {
   .right_column {
     grid-column: 1/13;
   }
-
 }
-
-@media (max-width: 360px) {
-  html {
-  font-size: 5px;
-  }
-}
-
 </style>

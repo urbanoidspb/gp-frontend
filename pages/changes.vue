@@ -1,10 +1,5 @@
 <template>
 <div>
-  <Contacts/>
-  <div class="wrapper">
-    <Navbar id="Navbar"/>
-
-
     <h2 class="title">Платформа перемен</h2>
 
     <p class="p1">
@@ -55,28 +50,8 @@
     29 мая 2019 г.</span> будут подведены итоги конкурса.</p> -->
 
     <h2 class="best_wishes">Желаем всем удачи!</h2>
-      <a class="SignInButton takePart takePartRow" href="/files/anketa.docx" target="_blank">Подать заявку</a>
-    </div>
-    <div class="stand_background">
-        <Footer id="Footer"/>
-    </div>
-
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(53837686, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/53837686" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-  </div>
+    <a class="SignInButton takePart takePartRow" href="/files/anketa.docx" target="_blank">Подать заявку</a>
+</div>
 </template>
 
 <script>
@@ -98,9 +73,6 @@ export default {
 </script>
 
 <style>
-html {
-  font-size: 16px;
-}
 .takePart {
     display: flex;
     justify-content: center;
@@ -120,17 +92,6 @@ html {
     height: 5rem;
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.5rem;
-}
-
-.wrapper > * {
-  grid-column: 2/14;
-}
-
 .title {
     text-align: center;
     font-size: 3rem;
@@ -148,7 +109,7 @@ p > span {
     font-weight: 500;
 }
 
-.wrapper .date {
+.date {
     width: 100%;
     margin: 4rem 0;
     grid-column: 4/12;
@@ -172,7 +133,7 @@ p > span {
     color: #0C6293;
 } */
 
-.wrapper .date p {
+.date p {
     font-size: 1.5rem;
     grid-column: 1/9;
     line-height: 2rem;
@@ -236,7 +197,7 @@ section.aims main {
     text-align: center;
 }
 
-.wrapper .toInfo {
+.toInfo {
     grid-column: 6/10;
     margin: 4rem 0;
     display: flex;
@@ -260,98 +221,18 @@ section.aims main {
     font-weight: 500;
 }
 
-.wrapper .takePartRow {
+.takePartRow {
   grid-column: 6/10;
 }
 
-.stand_background {
-  width: 100%;
-  background: #0C6293;
-  grid-column: 1/15;
-  display: grid;
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
-}
-
-#Footer {
-  grid-column: 2/14;
-}
-
-@media (min-width: 1920px) {
-  html {
-  font-size: 16px;
-  }
-}
-
-@media (max-width: 1675px) {
-  html {
-  font-size: 15px;
-  }
-}
-
-@media (max-width: 1575px) {
-  html {
-  font-size: 14px;
-  }
-}
-
-@media (max-width: 1475px) {
-  html {
-  font-size: 13px;
-  }
-}
-
-@media (max-width: 1375px) {
-  html {
-  font-size: 12px;
-  }
-}
-
-@media (max-width: 1275px) {
-  html {
-  font-size: 11px;
-  }
-}
-
-@media (max-width: 1175px) {
-  html {
-  font-size: 10px;
-  }
-}
-
-@media (max-width: 1075px) {
-  html {
-  font-size: 9px;
-  }
-}
-
-@media (max-width: 975px) {
-  html {
-  font-size: 8px;
-  }
-
-}
-
-@media (max-width: 885px) {
-  html {
-  font-size: 7px;
-  }
-}
-
-@media (max-width: 775px) {
-  html {
-  font-size: 6px;
-  }
-}
-
 @media (max-width: 780px) {
-
   .date {
     grid-gap: 4vw;
   }
-  .wrapper .takePart {
+  .takePart {
     grid-column: 5/11;
   }
-  .wrapper .toInfo {
+  .toInfo {
     grid-column: 5/11;
   }
 }
@@ -370,19 +251,7 @@ section.aims main {
   }
 }
 
-@media (max-width: 650px) {
-  html {
-  font-size: 5px;
-  }
-}
-
 @media (max-width: 576px) {
-  html {
-  font-size: 4px;
-  }
-  #Navbar {
-    margin-bottom: 2vw;
-  }
   .wrapper .takePart {
     grid-column: 4/12;
   }
@@ -392,12 +261,6 @@ section.aims main {
 }
 
 @media (max-width: 420px) {
-  .wrapper {
-  grid-template-columns: 0.5fr repeat(12, 1fr) 0.5fr;
-}
-  html {
-  font-size: 6px;
-  }
   .title {
       margin: 6rem 0 3rem;
   }
@@ -419,11 +282,4 @@ section.aims main {
     grid-column: 5/11;
   }
 }
-
-@media (max-width: 360px) {
-  html {
-  font-size: 5px;
-  }
-}
-
 </style>

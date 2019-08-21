@@ -1,10 +1,5 @@
 <template>
 <div>
-  <Contacts/>
-  <div class="wrapper">
-      <Navbar id="Navbar"/>
-
-
     <h2 class="title">Город героев</h2>
 
     <section class="herous_sign_in">
@@ -90,27 +85,7 @@
     </section>
 
 
-    </div>
-    <div class="stand_background">
-        <Footer id="Footer"/>
-    </div>
-
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-   ym(53837686, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/53837686" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-  </div>
+</div>
 </template>
 
 <script>
@@ -130,21 +105,6 @@ export default {
 </script>
 
 <style>
-html {
-  font-size: 16px;
-}
-
-.wrapper {
-  display: grid;
-  grid-template-columns: 1fr repeat(12, 1fr) 1fr;
-  font-family: 'Rubik', sans-serif;
-  font-size: 1.5rem;
-}
-
-.wrapper > * {
-  grid-column: 2/14;
-}
-
 img {
     width: 100%;
 }
@@ -174,40 +134,37 @@ img {
 
 @media (max-width: 420px) {
   .takeHero {
-  width: 100%;
-  font-weight: bold;
-  font-size: 3rem;
-  background: #71D5A2;
-  padding: 2.5rem 6rem;
-  border: none;
-  border-radius: 100px;
-  text-decoration: none;
-  color: white;
-  margin-bottom: 5rem;
-  cursor: pointer;
-  height: 8rem;
-  outline: none;
-}
+    width: 100%;
+    font-weight: bold;
+    font-size: 3rem;
+    background: #71D5A2;
+    padding: 2.5rem 6rem;
+    border: none;
+    border-radius: 100px;
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5rem;
+    cursor: pointer;
+    height: 8rem;
+    outline: none;
+  }
 }
 
 .herous_sign_in {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
 }
 
 .herous_sign_in p {
-font-size: 1.6rem;
-line-height: 2.25rem;
-margin: 3rem 3rem 3rem 0;
+  font-size: 1.6rem;
+  line-height: 2.25rem;
+  margin: 3rem 3rem 3rem 0;
 }
 
 .herous_sign_in img {
-    width: 85%;
-    margin-left: 10%;
+  width: 85%;
+  margin-left: 10%;
 }
-
-
-
 
 .hero_features {
     display: grid;
@@ -292,11 +249,6 @@ margin: 3rem 3rem 3rem 0;
     font-weight: 500;
     text-align: center;
 }
-
-
-
-
-
 
 .hero_info_block {
     display: grid;
