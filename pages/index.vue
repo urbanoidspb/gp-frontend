@@ -23,6 +23,7 @@
       </div>
     </section>
 
+    <!--
     <section class="home_events">
       <header>
         <h2>Мероприятия</h2>
@@ -34,7 +35,7 @@
                v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
       </main>
     </section>
-
+    -->
     <section class="home_news">
       <header>
         <h2>Новости</h2>

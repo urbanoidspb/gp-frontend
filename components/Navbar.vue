@@ -8,10 +8,9 @@
             <ul class="mobile" :class="{'mobile-show': show}">
                 <li><router-link to="/about" active-class="active">О нас</router-link></li>
                 <li><router-link to="/changes" active-class="active">Плафторма перемен</router-link></li>
-                <li><router-link to="/events" active-class="active">Мероприятия</router-link></li>
                 <li><router-link to="/news" active-class="active">Новости</router-link></li>
                 <li><router-link to="/gallery" active-class="active">Галерея</router-link></li>
-                <li><router-link to="/herous" active-class="active">Город героев</router-link></li>
+                <li><a href="https://gorod-geroev.spb.ru">Город героев</a></li>
             </ul>
        </transition>
     </nav>
