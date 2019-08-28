@@ -3,10 +3,7 @@
     <section class="news">
         <h2 class="title">{{NewsItem.title}}</h2>
         <article>
-            <img :src="photoSrc(NewsItem.photos)" alt="">
-            <p>
-                {{ NewsItem.text }}
-            </p>
+            <div v-html="NewsItem.text"></div>
         </article>
         <section class="another_news">
             <header>
@@ -58,23 +55,22 @@ export default {
 .news .title {
     text-align: center;
     font-size: 3rem;
-    margin: 4rem 0;
+    margin: 2rem 0;
 }
 
 .news article {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  /*display: grid;*/
+  /*grid-template-columns: repeat(6, 1fr);*/
   margin-bottom: 5vw;
 }
 
-.news article img {
-    grid-column: 2/6;
-    width: 100%;
-}
+/*.news article img {*/
+/*    grid-column: 2/6;*/
+/*    width: 100%;*/
+/*}*/
 
-.news article p {
+.news article > div {
     font-size: 1.5rem;
-    grid-column: 2/6;
     margin: 2vw 0;
     line-height: 2.5rem;
 }
@@ -97,15 +93,15 @@ export default {
     grid-gap: 4vw;
     margin: 4vw 0;
   }  
-  .news article img {
-    grid-column: 1/7;
-  }
+  /*.news article img {*/
+  /*  grid-column: 1/7;*/
+  /*}*/
 
-  .news article p {
-    grid-column: 1/7;
-    margin: 5vw 0 2vw;
-    font-size: 2.2rem;
-  }
+  /*.news article p {*/
+  /*  grid-column: 1/7;*/
+  /*  margin: 5vw 0 2vw;*/
+  /*  font-size: 2.2rem;*/
+  /*}*/
 
   .another_news header h3 {
     font-size: 2.5rem;

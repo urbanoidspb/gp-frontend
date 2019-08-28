@@ -38,14 +38,13 @@ export default {
 
     nav {
         display: flex;
-        height: 4vw;
+        height: 4.5rem;
         align-items: center;
     }
 
     .logo {
         height: 4.5rem;
         max-width: 10rem;
-        margin-left: 1.5rem;
     }
 
     .burger_btn {
@@ -116,16 +115,15 @@ export default {
             flex-direction: column;
             align-items: flex-start;
             z-index: 1000;
-            margin-left: -4rem;
         }
 
         .logo {
-            height: 9rem;
+            height: 6rem;
             max-width: 15rem;
         }
 
         nav {
-            height: 6vw;
+            height: 6rem;
         }
 
         ul {
@@ -172,12 +170,12 @@ export default {
 
     @media (max-width: 420px) {
         .logo {
-            height: 9rem;
+            height: 6rem;
             max-width: 15rem;
         }
 
         nav {
-            height: 6vw;
+            height: 6rem;
         }
 
         .burger_btn {

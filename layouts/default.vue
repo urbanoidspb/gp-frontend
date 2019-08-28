@@ -89,74 +89,74 @@ html {
 
 @media (max-width: 1675px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 1575px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 1475px) {
   html {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 1375px) {
   html {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 1275px) {
   html {
-    font-size: 11px;
+    font-size: 15px;
   }
 }
 
 @media (max-width: 1175px) {
   html {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 1075px) {
   html {
-    font-size: 9px;
+    font-size: 14px;
   }
 }
 
 @media (max-width: 975px) {
   html {
-    font-size: 8px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 885px) {
   html {
-    font-size: 7px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 775px) {
   html {
-    font-size: 6px;
+    font-size: 12px;
   }
 }
 
 
 @media (max-width: 650px) {
   html {
-    font-size: 5px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 576px) {
   html {
-    font-size: 4px;
+    font-size: 12px;
   }
   #Navbar {
     margin-bottom: 2vw;
@@ -168,7 +168,7 @@ html {
     grid-template-columns: 0.5fr repeat(12, 1fr) 0.5fr;
   }
   html {
-    font-size: 6px;
+    font-size: 12px;
   }
   .events main {
     grid-template-columns: 1fr 1fr;
@@ -179,19 +179,19 @@ html {
 
 @media (max-width: 360px) {
   html {
-    font-size: 5px;
+    font-size: 12px;
   }
 }
 
 @media (min-width: 420px) and (orientation: portrait) {
   .background {
-    margin-top: 30vh;
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 1175px) and (orientation: portrait) {
   .background {
-    margin-top: 45vh;
+    margin-top: 2rem;
   }
 }
 </style>

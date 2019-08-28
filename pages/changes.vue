@@ -57,7 +57,6 @@
 <script>
 import Contacts from '~/components/Contacts.vue'
 import Navbar from '~/components/Navbar.vue'
-import Event from '~/components/Event.vue'
 import miniModal from '~/components/miniModal.vue'
 import Footer from '~/components/Footer.vue'
 
@@ -65,7 +64,6 @@ export default {
   components: {
     Contacts,
     Navbar,
-    Event,
     miniModal,
     Footer
   }

@@ -23,19 +23,6 @@
       </div>
     </section>
 
-    <!--
-    <section class="home_events">
-      <header>
-        <h2>Мероприятия</h2>
-        <router-link to="/events">Все мероприятия</router-link>
-      </header>
-      <main>
-        <Event class="event_block" v-for="event in events.slice(0, 4)" v-bind:key="event.id"
-               v-bind:event-id="event.id" v-bind:event-title="event.title" v-bind:event-time="event.time"
-               v-bind:event-status="event.is_relevant" v-bind:event-photo="event.photos[0]"/>
-      </main>
-    </section>
-    -->
     <section class="home_news">
       <header>
         <h2>Новости</h2>
@@ -54,7 +41,6 @@
 <script>
   import Contacts from '~/components/Contacts.vue'
   import Navbar from '~/components/Navbar.vue'
-  import Event from '~/components/Event.vue'
   import News from '~/components/News.vue'
   import Footer from '~/components/Footer.vue'
   import miniModal from '~/components/miniModal.vue'
@@ -63,16 +49,13 @@
     components: {
       Contacts,
       Navbar,
-      Event,
       News,
       Footer,
       miniModal
     },
     async asyncData({store}) {
-      await store.dispatch('actSetEvents');
       await store.dispatch('actSetNews');
       return {
-        events: store.getters.getEvents,
         news: store.getters.getNews
       }
     }

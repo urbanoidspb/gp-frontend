@@ -4,7 +4,6 @@
             <li><router-link to="/">Главная</router-link></li>
             <li><router-link to="/about">О нас</router-link></li>
             <li><router-link to="/changes">Плафторма перемен</router-link></li>
-            <li><router-link to="/events">Мероприятия</router-link></li>
             <li><router-link to="/news">Новости</router-link></li>
             <li><router-link to="/gallery">Галерея</router-link></li>
        </ul>
