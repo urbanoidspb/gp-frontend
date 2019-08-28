@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="grid-column: 3/13">
     <section class="news">
         <h2 class="title">{{NewsItem.title}}</h2>
         <article>
@@ -73,6 +73,18 @@ export default {
     font-size: 1.5rem;
     margin: 2vw 0;
     line-height: 2.5rem;
+}
+
+.news article hr {
+    border: none;
+    text-align: center;
+}
+
+.news article hr::after {
+    content: "***";
+    display: inline;
+    padding: 0 0.5em;
+    font-size: 2rem;
 }
 
 .another_news header h3 {
