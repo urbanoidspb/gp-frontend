@@ -8,7 +8,7 @@
             <nav class="contacts_item contacts_item_right">
                 <a href="https://www.youtube.com/channel/UCr26U87t9bCn7m4jtEhh4og" target="_blank"><div class="socials socials_youtube"></div></a>
                 <a href="https://vk.com/spbperemen" target="_blank"><div class="socials socials_vk"></div></a>
-                <a href="https://www.instagram.com/peterburggorod/" target="_blank"><div class="socials socials_insta"></div></a>
+                <a href="https://www.instagram.com/gorodperemen_spb/?igshid=nqqgwrfabss6" target="_blank"><div class="socials socials_insta"></div></a>
             </nav>
         </section>
     </div>
@@ -36,7 +36,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr repeat(12, 1fr) 1fr;
         border-bottom: 1px solid #D6D5D5;
-        
+
         margin-bottom: 0.5rem;
     }
 

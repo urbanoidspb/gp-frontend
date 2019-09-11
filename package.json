@@ -1,8 +1,8 @@
 {
-  "name": "spb",
+  "name": "city-of-changes",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
-  "author": "vladdlab <vladislavbochmanov@gmail.com>",
+  "description": "Проект фронтенда сайта gorodperemen.spb.ru",
+  "author": "Bonch.dev",
   "private": true,
   "scripts": {
     "dev": "nuxt",
