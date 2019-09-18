@@ -68,6 +68,12 @@ export default {
 /*    grid-column: 2/6;*/
 /*    width: 100%;*/
 /*}*/
+.news article img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+}
 
 .news article > div {
     font-size: 1.5rem;
@@ -102,9 +108,8 @@ export default {
 @media (max-width: 420px) {
   .another_news main {
     grid-template-columns: 1fr 1fr;
-    grid-gap: 4vw;
     margin: 4vw 0;
-  }  
+  }
   /*.news article img {*/
   /*  grid-column: 1/7;*/
   /*}*/
