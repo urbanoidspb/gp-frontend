@@ -1,5 +1,5 @@
 <template>
-<div style="grid-column: 3/13">
+<div class="new">
     <section class="news">
         <h2 class="title">{{NewsItem.title}}</h2>
         <article>
@@ -103,6 +103,12 @@ export default {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 2vw;
   margin: 3vw 0 3vw;
+}
+
+@media (min-width: 1200px) {
+  .new {
+    grid-column: 3/13;
+  }
 }
 
 @media (max-width: 420px) {
